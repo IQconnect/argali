@@ -6,8 +6,8 @@ $theme-colors: (
   dark: #000,
   primary: #364ea2,
   secondary: #dcc38b,
-  grey: #707070,
-  special: #fec400,
+  greey: #ebe9e6,
+  special: #ff8c56,
   free: #20ff49,
   taken: #ffdd1b,
   sold: #fa0909
@@ -24,8 +24,8 @@ $media: (
 $transition: 0.4s;
 
 $font-family: (
-  main: "Biryani",
-  title: "Martel"
+  main: "Work Sans",
+  title: "Work Sans"
 );
 
 $gutter: 8px;
@@ -41,3 +41,5 @@ $z-index: (
   preloader: 300,
   popup: 250
 );
+
+$lineSize: 2px;

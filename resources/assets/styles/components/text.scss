@@ -59,7 +59,7 @@
 
   font-family: map-get($font-family, main);
   color: map-get($theme-colors, dark);
-  font-weight: 800;
+  font-weight: 500;
 
   @extend %text;
 
