@@ -1,0 +1,55 @@
+.section-header {
+  color: color(primary);
+  text-align: center;
+
+  &__title {
+    text-align: center;
+    margin: auto;
+    display: block;
+
+    &::after {
+      @include cssLock("width", 360, 1440, (50, 190));
+
+      content: "";
+      display: block;
+      height: $gutter / 2;
+      margin: 0 auto ($gutter * 2.5);
+      background-color: color(secondary);
+    }
+
+    &--left {
+      text-align: left;
+      display: block;
+      margin-left: auto;
+    }
+  }
+
+  &__sub {
+    opacity: 0.5;
+    display: block;
+
+    &--left {
+      position: relative;
+      padding-top: $gutter * 1.5;
+      display: block;
+      text-align: left;
+
+      &::after {
+        @include cssLock("width", 360, 1440, (50, 100));
+
+        content: "";
+        display: inline-block;
+        height: $gutter / 2;
+        background-color: color(secondary);
+        margin-left: $gutter * 4;
+        margin-bottom: $gutter;
+      }
+    }
+  }
+
+  &__img {
+    max-width: $gutter * 20;
+    height: auto;
+    margin: 0 auto ($gutter * 4);
+  }
+}

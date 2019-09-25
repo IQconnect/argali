@@ -1,0 +1,131 @@
+table {
+  border-collapse: collapse;
+  text-align: center;
+  width: 100%;
+
+  thead {
+    background-color: color("primary");
+
+    @media (max-width: 767px) {
+      display: none;
+    }
+
+    th {
+      @extend .text;
+
+      padding: ($gutter * 4) 0;
+      text-transform: uppercase;
+      color: color("light");
+      font-weight: 400;
+    }
+  }
+
+  tbody {
+    @extend .text;
+
+    font-weight: 300;
+
+    tr {
+      background-color: rgba(color("primary"), 0.1);
+
+      @media (max-width: 767px) {
+        display: flex;
+        flex-direction: column;
+      }
+
+      &:nth-child(2n) {
+        background-color: rgba(color("primary"), 0.2);
+      }
+    }
+
+    td {
+      padding: ($gutter * 2) 0;
+      text-align: center;
+
+      span {
+        padding: $gutter;
+        color: color("light");
+        width: $gutter * 12;
+        display: inline-block;
+
+        &.wolne {
+          background: color("free");
+          letter-spacing: 2px;
+        }
+
+        &.zajęte {
+          background: color("taken");
+          color: color("dark");
+        }
+
+        &.sprzedane {
+          background: color("sold");
+        }
+      }
+
+      &::first-letter {
+        text-transform: uppercase;
+      }
+
+      &::before {
+        @media (min-width: 767px) {
+          display: none;
+        }
+      }
+
+      &:nth-child(1) {
+        &::before {
+          content: "Nr:   ";
+        }
+      }
+
+      &:nth-child(2) {
+        &::before {
+          content: "Powierzchnia:   ";
+        }
+      }
+
+      &:nth-child(3) {
+        &::before {
+          content: "Balkon / Taras:   ";
+        }
+      }
+
+      &:nth-child(4) {
+        &::before {
+          content: "Piętro:   ";
+        }
+      }
+
+      &:nth-child(5) {
+        &::before {
+          content: "Status:   ";
+        }
+      }
+
+      &:nth-child(6) {
+        &::before {
+          content: "Cena:   ";
+        }
+      }
+    }
+  }
+
+  img {
+    width: $gutter * 4;
+    margin: ($gutter * 0.5);
+  }
+
+  a {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .table__plan {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

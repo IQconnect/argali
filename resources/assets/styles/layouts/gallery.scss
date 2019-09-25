@@ -1,0 +1,22 @@
+.gallery {
+  width: 100%;
+  padding: ($gutter * 10) 0;
+
+  &__cell {
+    position: relative;
+    width: 50%;
+    padding-top: 30%;
+    margin: 0 ($gutter * 6);
+
+    img {
+      @extend .image;
+      @extend .absolute;
+
+      max-width: 100%;
+    }
+  }
+
+  & + .section {
+    padding-top: 0;
+  }
+}

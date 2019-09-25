@@ -1,0 +1,44 @@
+.info-section {
+  @extend .overlay;
+
+  color: color(light);
+  position: relative;
+
+  &__bg {
+    @extend .image;
+
+    object-position: center 80%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__content {
+    padding: ($gutter * 8) 0;
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 10;
+    position: relative;
+  }
+
+  &__boxes {
+    display: none;
+
+    @include media("lg") {
+      width: 55%;
+      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      grid-gap: $gutter * 4;
+    }
+  }
+
+  &__desc {
+    width: 100%;
+
+    @include media("lg") {
+      width: 45%;
+    }
+  }
+}

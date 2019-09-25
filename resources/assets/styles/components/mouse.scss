@@ -1,0 +1,32 @@
+.mouse {
+  width: $gutter * 6;
+  height: $gutter * 9;
+  border: ($gutter / 2) solid rgba(color("primary"), 0.8);
+  border-radius: $gutter * 6;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+
+  &__dot {
+    width: $gutter;
+    height: $gutter * 2;
+    border-radius: 100%;
+    background-color: color("primary");
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: $gutter;
+    animation: dot 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes dot {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY($gutter);
+  }
+}

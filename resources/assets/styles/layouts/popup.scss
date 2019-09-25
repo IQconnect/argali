@@ -1,0 +1,105 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+  background-color: color("primary");
+  overflow: auto;
+  grid-template-columns: repeat(2, 1fr);
+  z-index: z-index("popup");
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s;
+  display: none;
+
+  @media (max-width: 992px) {
+    display: none !important;
+  }
+
+  &.-is-active {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  &__info {
+    @include cssLock("padding", 360, 1920, (16, 20));
+
+    position: relative;
+
+    @media (max-width: 1200px) {
+      display: none !important;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 10;
+    color: color("special");
+  }
+
+  &__image {
+    @extend .image;
+    @extend .absolute;
+  }
+
+  &__form {
+    padding: 5%;
+
+    .form-box__content {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .form {
+    &__input,
+    &__textarea {
+      padding-right: 0;
+      width: calc(100% - 16px);
+    }
+  }
+
+  &__close {
+    z-index: 10;
+    position: absolute;
+    top: $gutter * 2;
+    right: $gutter * 2;
+    bottom: unset;
+    left: unset;
+    width: $gutter * 4;
+    height: $gutter * 4;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      @extend .absolute;
+
+      content: "";
+      width: 100%;
+      height: $gutter * 0.3;
+      background-color: color("light");
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+}
+
+.home {
+  .popup {
+    display: grid;
+  }
+}

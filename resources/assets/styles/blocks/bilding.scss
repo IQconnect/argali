@@ -1,0 +1,25 @@
+.bilding {
+  @extend .overlay;
+
+  padding: ($gutter * 10) ($gutter * 4) ($gutter * 14);
+
+  &__header {
+    position: relative;
+  }
+
+  &__content {
+    position: relative;
+  }
+
+  &__footer {
+    position: relative;
+    margin-top: $gutter * 4;
+  }
+
+  &__image {
+    @extend .absolute;
+    @extend .image;
+
+    z-index: -1;
+  }
+}

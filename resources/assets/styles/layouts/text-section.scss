@@ -1,0 +1,11 @@
+.text-section {
+  &__header {
+    margin-bottom: $gutter * 6;
+  }
+
+  &__content {
+    margin: 0 auto;
+    max-width: $gutter * 100;
+    color: rgba(color("dark"), 0.6);
+  }
+}

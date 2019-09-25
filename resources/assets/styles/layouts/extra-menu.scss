@@ -1,0 +1,7 @@
+.extra-menu {
+  padding: ($gutter * 9) 0;
+
+  & + section {
+    padding-top: 0;
+  }
+}

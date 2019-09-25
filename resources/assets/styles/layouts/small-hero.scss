@@ -1,0 +1,29 @@
+.small-hero {
+  @extend .overlay;
+
+  padding-top: $gutter * 20;
+  height: 35vh;
+  min-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    @extend .image;
+    @extend .absolute;
+
+    z-index: -1;
+  }
+
+  &__overlay {
+    @extend .absolute;
+
+    background: color("light");
+    clip-path: polygon(100% 66%, 0% 100%, 100% 100%);
+  }
+
+  &__header {
+    position: relative;
+    z-index: 10;
+  }
+}

@@ -1,0 +1,16 @@
+.stats {
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__col {
+    @media (max-width: 767px) {
+      margin-bottom: $gutter * 2;
+    }
+  }
+}

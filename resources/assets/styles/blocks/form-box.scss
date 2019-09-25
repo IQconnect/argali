@@ -1,0 +1,54 @@
+.form-box {
+  @extend .overlay;
+
+  position: relative;
+  padding: ($gutter * 7) ($gutter * 25) 0 ($gutter * 15);
+
+  @media (max-width: 1200px) {
+    padding: ($gutter * 7) 0 0 0;
+  }
+
+  &__bg {
+    @extend .image;
+
+    object-position: center 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__header {
+    z-index: 10;
+    position: relative;
+
+    @media (max-width: 1200px) {
+      max-width: calc(100% - 200px);
+      margin: 0 auto;
+      padding-bottom: $gutter * 4;
+    }
+
+    @media (max-width: 998px) {
+      max-width: 100%;
+      padding: 0 ($gutter * 3);
+    }
+  }
+
+  &__content {
+    z-index: 10;
+    position: relative;
+    margin-left: auto;
+    margin-bottom: 10%;
+
+    @media (max-width: 1200px) {
+      max-width: calc(100% - 200px);
+      margin: 0 auto;
+      padding: ($gutter * 4) $gutter * 10;
+    }
+
+    @media (max-width: 998px) {
+      max-width: 100%;
+      padding: 0 ($gutter * 5) ($gutter * 3) ($gutter * 4);
+    }
+  }
+}

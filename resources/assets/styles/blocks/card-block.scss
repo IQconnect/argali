@@ -1,0 +1,19 @@
+.card-block {
+  padding: 0 ($gutter * 10) 0 ($gutter * 15);
+
+  @media (max-width: 567px) {
+    padding: 0 ($gutter * 4) 0 ($gutter * 4);
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__text {
+    color: color(light);
+    opacity: 0.6;
+    max-width: $gutter * 60;
+    padding-top: $gutter * 2;
+    padding-bottom: $gutter * 7;
+  }
+}

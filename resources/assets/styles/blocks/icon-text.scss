@@ -1,0 +1,14 @@
+.icon-text {
+  display: flex;
+  padding: ($gutter * 2) ($gutter * 2.1) ($gutter * 9);
+
+  &__icon {
+    height: $gutter * 8;
+    width: auto;
+  }
+
+  &__text {
+    color: color(primary);
+    padding: $gutter $gutter * 2.5;
+  }
+}

@@ -1,0 +1,120 @@
+.hero {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &__info {
+    position: absolute;
+    top: 20%;
+    left: 60%;
+    padding-left: 0;
+    opacity: 0;
+    pointer-events: none;
+
+    @media (max-width: 1600px) {
+      left: 50%;
+      width: 50%;
+    }
+
+    @media (max-width: 998px) {
+      left: 10%;
+      width: 80%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @media (max-width: 567px) {
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &.-is-active {
+      pointer-events: initial;
+      animation: show 0.4s ease-in both;
+    }
+
+    &.-on-hold {
+      animation: hide 0.6s ease-in both;
+      pointer-events: none !important;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0;
+
+    &.-is-active {
+      pointer-events: initial;
+      animation: showIMG 0.4s ease-in both;
+    }
+
+    &.-on-hold {
+      animation: hideIMG 0.6s ease-in both;
+      pointer-events: none !important;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: $gutter * 4;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    transform: translateY($gutter * 4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes showIMG {
+  0% {
+    opacity: 0;
+    transform: translateY(-$gutter * 4);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-$gutter * 4);
+  }
+}
+
+@keyframes hideIMG {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY($gutter * 4);
+  }
+}

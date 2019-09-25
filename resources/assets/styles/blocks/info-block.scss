@@ -1,0 +1,45 @@
+.info-block {
+  max-width: $gutter * 60;
+  width: 70%;
+  padding: ($gutter * 4) ($gutter * 8);
+  background-color: color("light");
+  box-shadow: rgba(color("primary"), 0.3) $gutter $gutter $gutter;
+
+  @media (max-width: 998px) {
+    max-width: 100%;
+  }
+
+  &__title {
+    margin-bottom: $gutter * 4;
+  }
+
+  &__content {
+    margin-bottom: $gutter * 4;
+
+    b,
+    strong {
+      margin-bottom: $gutter;
+      display: inline-block;
+    }
+  }
+
+  &__footer {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: $gutter * 2;
+
+    @media (max-width: 1140px) {
+      grid-template-columns: auto;
+    }
+  }
+
+  &__nav {
+    margin-top: $gutter * 4;
+  }
+
+  &__button {
+    border: 0;
+    background: 0;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,29 @@
+.price {
+  @extend .text;
+
+  font-weight: 400;
+  color: color("dark");
+  display: block;
+  width: 100%;
+  line-height: 1;
+
+  &--promo {
+    color: color("sold");
+    line-height: 1.5;
+  }
+
+  &--del {
+    @extend .text;
+    @extend .small-text;
+
+    opacity: 0.4;
+    text-decoration: line-through;
+  }
+
+  &--message {
+    @extend .small-text;
+
+    line-height: 1.5;
+    font-weight: 600;
+  }
+}

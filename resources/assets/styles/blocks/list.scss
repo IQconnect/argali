@@ -1,0 +1,28 @@
+$space: ($gutter_num * 2);
+
+.list {
+  @include cssLock("margin", 360, 1920, (-$space/2, -$space));
+
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @include media(sm) {
+    flex-direction: row;
+  }
+
+  &__elem {
+    @include cssLock("padding", 360, 1920, ($space/2, $space));
+
+    width: 100%;
+
+    @include media(sm) {
+      width: auto;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+.icon-box {
+  color: color(light);
+  background: color(secondary);
+  padding: $gutter * 4;
+  text-align: center;
+
+  &__icon {
+    width: $gutter * 8;
+    height: auto;
+    margin: auto;
+    padding: $gutter * 3;
+  }
+
+  &__line {
+    border-bottom: 2px solid color(light);
+    border-top: 0;
+    margin-bottom: $gutter * 2.5;
+  }
+
+  &__desc {
+    color: color(light);
+    opacity: 1;
+    max-width: $gutter * 25;
+    margin: auto;
+    padding-top: $gutter * 3;
+  }
+}

@@ -1,0 +1,100 @@
+.form {
+  &__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: ($gutter * 6);
+  }
+
+  &__col {
+    margin-bottom: ($gutter * 3);
+
+    &--message {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    &--send {
+      margin-top: ($gutter * 5);
+      width: 50%;
+    }
+  }
+
+  &__input {
+    border-radius: $gutter * 3;
+    outline: none;
+    border: none;
+    padding-left: ($gutter * 2);
+    width: 100%;
+    height: ($gutter * 4);
+  }
+
+  &__textarea {
+    border-radius: $gutter * 3;
+    outline: none;
+    padding: ($gutter * 2) 0 0 ($gutter * 2);
+    border: none;
+    width: 100%;
+    resize: none;
+  }
+
+  &__label {
+    margin: $gutter ($gutter * 2) $gutter ($gutter * 2);
+    color: color("light");
+
+    &--textnearcheck {
+      font-size: ($gutter * 1.1);
+    }
+  }
+
+  &__labelcheck {
+    padding-top: ($gutter * 0.4);
+    padding-left: ($gutter * 4);
+    display: block;
+    color: color("light");
+  }
+
+  &__checkcontainer {
+    display: block;
+    position: relative;
+  }
+
+  &__check {
+    border: 0;
+    outline: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    border-radius: $gutter;
+    -webkit-appearance: none;
+    background-color: color("light");
+    box-shadow:
+      0 1px 2px (color("primary")),
+      inset 0 -15px 10px -12px (color("dark"));
+    padding: ($gutter * 0.8);
+    -webkit-user-select: none;
+
+    /* Safari */
+    -moz-user-select: none;
+
+    /* Firefox */
+    -ms-user-select: none;
+
+    /* IE10+/Edge */
+    user-select: none;
+
+    /* Standard */
+    &:active {
+      box-shadow: 0 1px 2px (color("grey")), inset 0 1px 3px (color("dark"));
+    }
+
+    &:checked {
+      background-color: color("special");
+      box-shadow:
+        0 1px 2px (color("dark")),
+        inset 0 -15px 10px -12px (color("dark")),
+        inset 15px 10px -12px (color("dark"));
+      color: color("dark");
+    }
+  }
+}

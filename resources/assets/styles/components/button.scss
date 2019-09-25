@@ -1,0 +1,73 @@
+@mixin button-bg($bg) {
+  background: $bg;
+
+  &:hover {
+    background: darken($bg, 8%);
+  }
+
+  &:active {
+    background: darken($bg, 25%);
+  }
+}
+
+.button {
+  color: color("light");
+  text-decoration: none;
+  padding: $gutter ($gutter * 4);
+  border-radius: $gutter * 3;
+  font-size: $gutter * 2;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-appearance: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &--textchange {
+    color: color("secondary");
+  }
+
+  &--primary {
+    @include button-bg(color("primary"));
+  }
+
+  &--primary-light {
+    @include button-bg(color("light"));
+
+    color: color("primary");
+    border-color: rgba(color("primary"), 0.2);
+
+    &:hover {
+      border-color: rgba(color("primary"), 0.5);
+    }
+  }
+
+  &--secondary {
+    @include button-bg(color("secondary"));
+  }
+
+  &--light {
+    @include button-bg(color("light"));
+  }
+
+  &--full-sm {
+    display: block;
+    text-align: center;
+
+    @include media(sm) {
+      display: inline;
+    }
+  }
+
+  &.-is-active {
+    background-color: color("secondary");
+  }
+
+  &__icon {
+    height: $gutter * 3;
+    width: $gutter * 3;
+    display: inline-block;
+    margin: 0 $gutter ($gutter * 0.3) 0;
+  }
+}

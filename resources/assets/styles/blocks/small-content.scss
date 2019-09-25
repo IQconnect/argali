@@ -1,0 +1,25 @@
+.small-content {
+  &__title {
+    @include cssLock("padding-bottom", 360, 1920, ($gutter_num/2, $gutter_num));
+    @include cssLock("margin-bottom", 360, 1920, ($gutter_num * 2, $gutter_num * 4));
+
+    position: relative;
+
+    &::before {
+      @include cssLock(
+        "width",
+        360,
+        1920,
+        ($gutter_num * 10, $gutter_num * 20)
+      );
+      @include cssLock("font-size", 360, 1920, (16, 20));
+
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: $gutter * 0.4;
+      background-color: color("special");
+    }
+  }
+}

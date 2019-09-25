@@ -1,0 +1,26 @@
+.side-box {
+  position: fixed;
+  top: 50%;
+  left: -$gutter * 40;
+  z-index: 1000;
+  transition: $transition;
+  display: flex;
+
+  &:hover {
+    left: 0;
+  }
+
+  .fb-page {
+    width: $gutter * 40;
+    max-width: $gutter * 40;
+  }
+
+  &__fb-button {
+    font-size: $gutter * 5;
+    color: color("light");
+    cursor: pointer;
+    background-color: #3b5998;
+    padding: $gutter ($gutter * 2);
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,9 @@
+.container {
+  max-width: calc(100% - 200px);
+  margin: 0 auto;
+
+  @media (max-width: 998px) {
+    max-width: 100%;
+    padding: 0 ($gutter * 3);
+  }
+}
