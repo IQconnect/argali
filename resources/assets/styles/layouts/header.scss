@@ -19,6 +19,7 @@
       calc(1 * (100% / 3)) 100%,
       calc(2 * (100% / 1.5)) 100%;
     background-repeat: no-repeat;
+    padding: gutter(3) 0;
   }
 
   &__wrapper {
@@ -97,9 +98,10 @@
       justify-content: flex-end;
       align-items: center;
       background-color: transparent;
-      padding: 0 15px;
       overflow: initial;
       top: unset;
+      right: 0;
+      padding: 0;
     }
 
     &::before {

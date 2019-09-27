@@ -64,10 +64,15 @@
     background-color: color("secondary");
   }
 
-  &__icon {
-    height: $gutter * 3;
-    width: $gutter * 3;
-    display: inline-block;
-    margin: 0 $gutter ($gutter * 0.3) 0;
+  &--nav-arrow {
+    border-radius: 0;
+    padding: 0;
+    width: gutter(6);
+    height: gutter(6);
+    transition: $transition;
+
+    &:hover {
+      background-color: color("greey");
+    }
   }
 }

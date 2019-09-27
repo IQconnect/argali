@@ -1,0 +1,35 @@
+.realization-info {
+  @include cssLock("padding", 360, 1920, ($gutter_num, $gutter_num * 3));
+
+  background: theme-color(special-dark);
+  color: theme-color(light);
+
+  @include media(sm) {
+    width: $gutter * 70;
+  }
+
+  &__header {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: theme-color(special);
+  }
+
+  &__icon {
+    @include cssLock("margin-right", 360, 1920, ($gutter_num, $gutter_num * 2));
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
+  }
+
+  &__description {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+  }
+
+  &__footer {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(), gutter_num(2)));
+  }
+}

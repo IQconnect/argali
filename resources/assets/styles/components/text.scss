@@ -9,18 +9,17 @@
 
   color: map-get($theme-colors, primary);
   font-family: map-get($font-family, title);
-  font-weight: 800;
+  font-weight: $bold;
   line-height: 1.1;
 
   @extend %text;
 }
 
 .title {
-  @include cssLock("font-size", 360, 1920, (18, 56));
+  @include cssLock("font-size", 360, 1920, (gutter_num(3), gutter_num(6)));
 
-  color: map-get($theme-colors, primary);
   font-family: map-get($font-family, title);
-  font-weight: 800;
+  font-weight: $bold;
 
   @extend %text;
 
@@ -37,7 +36,7 @@
   @include cssLock("font-size", 360, 1920, (16, 32));
 
   font-family: map-get($font-family, title);
-  font-weight: 800;
+  font-weight: $bold;
 
   @extend %text;
 
@@ -55,11 +54,11 @@
 }
 
 .text {
-  @include cssLock("font-size", 360, 1920, (12, 16));
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.5), gutter_num(2)));
 
   font-family: map-get($font-family, main);
-  color: map-get($theme-colors, dark);
-  font-weight: 500;
+  font-weight: $medium;
+  line-height: 1.8;
 
   @extend %text;
 
@@ -89,7 +88,7 @@
 
   font-family: map-get($font-family, main);
   color: map-get($theme-colors, dark);
-  font-weight: 800;
+  font-weight: $bold;
 }
 
 .small-text {
@@ -101,7 +100,7 @@
 }
 
 .bold {
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .light {
