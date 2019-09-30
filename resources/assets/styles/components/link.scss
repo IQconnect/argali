@@ -4,21 +4,4 @@
   &:hover {
     opacity: 0.6;
   }
-
-  &--arrow {
-    &::after {
-      content: url("../../images/next.png");
-      position: relative;
-      top: gutter(0.15);
-      left: 0;
-      margin-left: gutter(2);
-      transition: $transition;
-    }
-
-    &:hover {
-      &::after {
-        left: gutter(0.5);
-      }
-    }
-  }
 }

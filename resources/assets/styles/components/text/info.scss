@@ -1,0 +1,34 @@
+.text-info {
+  color: theme-color(dark);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+
+  &__header {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: theme-color(special);
+  }
+
+  &__icon {
+    @include cssLock("margin-right", 360, 1920, ($gutter_num, $gutter_num * 2));
+  }
+
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
+  }
+
+  &__description {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+  }
+
+  &__footer {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(), gutter_num(2)));
+  }
+}
