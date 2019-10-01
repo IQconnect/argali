@@ -9,7 +9,7 @@ body {
   margin: 0 !important;
   padding: 0;
 
-  @include media(md) {
+  @include media(lg) {
     background:
       linear-gradient(theme-color("light"), theme-color("light")),
       linear-gradient(theme-color("greey"), theme-color("greey"));
