@@ -8,6 +8,16 @@ body {
   overflow-x: initial;
   margin: 0 !important;
   padding: 0;
+
+  @include media(md) {
+    background:
+      linear-gradient(theme-color("light"), theme-color("light")),
+      linear-gradient(theme-color("greey"), theme-color("greey"));
+    background-size:
+      calc(1 * (100% / 3)) 100%,
+      calc(2 * (100% / 1.5)) 100%;
+    background-repeat: no-repeat;
+  }
 }
 
 #wpadminbar {
@@ -40,4 +50,9 @@ a {
 img {
   width: 100%;
   display: block;
+}
+
+section,
+footer {
+  z-index: 1;
 }

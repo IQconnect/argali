@@ -10,5 +10,5 @@ $builder
     ->addTab('builder', ['placement' => 'left'])
         ->addFlexibleContent('components', ['button_label' => 'Add Component'])
             ->addLayout('hero')
-            ->addLayout('homepage');
+            ->addLayout(get_field_partial('components.homepage'));
 return $builder;

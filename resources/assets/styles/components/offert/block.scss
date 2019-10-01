@@ -1,0 +1,46 @@
+.offert-block {
+  @include cssLock("padding", 360, 1920, (gutter_num(2), gutter_num(4)));
+  @include cssLock("padding-top", 360, 1920, (gutter_num(3), gutter_num(6)));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: theme-color(special-dark);
+  color: theme-color(light);
+  height: 100%;
+
+  &:hover {
+    background: lighten(theme-color(special-dark), 10%);
+  }
+
+  &__header {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3), gutter_num(5)));
+  }
+
+  &__wrapper {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: gutter(0.5);
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(8);
+      height: 1px;
+      background-color: theme-color(special);
+    }
+  }
+
+  &__dsc {
+    margin: 0;
+  }
+}

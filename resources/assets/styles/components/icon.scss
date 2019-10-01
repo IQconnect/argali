@@ -1,20 +1,25 @@
 .icon {
-  // &--location {
-  //   &::before {
-  //     content: url("../images/icons/map-marker.png");
-  //   }
-  // }
+  &--location {
+    &::before {
+      content: url("../images/icons/map-marker.png");
+    }
+  }
 
-  // &--next {
-  //   &::before {
-  //     content: url("../images/icons/next-btn.png");
-  //   }
-  // }
+  &--next {
+    &::before {
+      content: url("../images/icons/next-btn.png");
+    }
+  }
 
-  // &--prev {
-  //   &::before {
-  //     content: url("../images/icons/prev-btn.png");
-  //   }
-  // }
-  opacity: 0;
+  &--prev {
+    &::before {
+      content: url("../images/icons/prev-btn.png");
+    }
+  }
+
+  &--invert {
+    &::before {
+      filter: invert(1);
+    }
+  }
 }

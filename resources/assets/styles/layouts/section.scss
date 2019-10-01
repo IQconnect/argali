@@ -3,4 +3,39 @@
 
   padding-left: 0;
   padding-right: 0;
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: gutter(4);
+
+    @include media(lg) {
+      grid-gap: gutter(18);
+      grid-template-columns: 1fr 2.28fr;
+    }
+  }
+
+  &__cell {
+    position: relative;
+  }
+
+  &__image {
+    @extend .absolute;
+    @extend .image;
+
+    bottom: unset;
+    height: auto;
+    max-height: 100vh;
+    box-shadow: 0 gutter(3) gutter(3) gutter(-2) rgba(theme-color(dark), 0.6);
+    display: none;
+
+    @include media(lg) {
+      display: initial;
+    }
+
+    @media (max-width: map-get($media, lg)) {
+      display: initial;
+      position: relative;
+    }
+  }
 }

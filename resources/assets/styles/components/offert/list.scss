@@ -1,0 +1,17 @@
+.offert-list {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: 100%;
+  grid-gap: gutter(4);
+  margin: 0;
+
+  @include media(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media(lg) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

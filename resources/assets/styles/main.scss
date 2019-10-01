@@ -46,8 +46,12 @@
 /** Realization */
 @import "components/realization/info";
 
-// /** Text */
-// @import "components/text/info";
+/** Text */
+@import "components/text/info";
+
+/** Offert */
+@import "components/offert/list";
+@import "components/offert/block";
 
 /** Blocks */
 @import "blocks/section-header";

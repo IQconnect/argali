@@ -5,7 +5,11 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+
+  &--space-bottom {
+    @include cssLock("padding-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+  }
 
   &__header {
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
@@ -14,6 +18,7 @@
     justify-content: flex-start;
     align-items: center;
     color: theme-color(special);
+    text-transform: uppercase;
   }
 
   &__icon {
@@ -29,6 +34,6 @@
   }
 
   &__footer {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(), gutter_num(2)));
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
   }
 }

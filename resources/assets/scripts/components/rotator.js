@@ -71,7 +71,7 @@ const rotator = {
             
             setTimeout(()=>{
                 element.classList.remove(this.holdClass);
-            }, 800);
+            }, 1000);
         });  
 
         Array.from(this.image).forEach((element, index) => {
@@ -83,7 +83,7 @@ const rotator = {
             
             setTimeout(()=>{
                 element.classList.remove(this.holdClass);
-            }, 800);
+            }, 1000);
         });  
     },
 

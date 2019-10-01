@@ -254,3 +254,23 @@ class Placeholder {
 function image($id, $size, $class) {
     return wp_get_attachment_image($id, $size, false, ['class'=>$class]);
 }
+
+// Our custom post type function
+function create_offert() {
+ 
+    register_post_type( 'oferty',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Oferta' ),
+                'singular_name' => __( 'Oferta' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'oferty'),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' )
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_offert' );

@@ -1,11 +1,14 @@
 @php
-  $label = "Nasza misja";
-  $title = "Gotowe domy szeregowe Żytnia 21";
-  $dsc = "Osiedle Żytnia 21 położone z dala wielkomiejskiego zgiełku.  Idealne miejsce do zamieszkania dla rodzin. Każdy z segmentów będzie posiadał własny ogród oraz garaż";
-  $link = array('title'=>'Wybierz dom', 'url'=>'#');
+  $info = $data['text-info'];
+  $label = $info['label'];
+  $title = $info['title'];
+  $dsc = $info['dsc'];
+  $link = $info['link'];
 @endphp
 
-<div class="text-info">
+@if ($info)
+
+<div class="text-info {{ $class }}">
   <header class="text-info__header">
     <p class="text-info__label text bold">
       {!! $label !!}
@@ -17,9 +20,13 @@
   <p class="text-info__description text">
     {!! $dsc !!}
   </p>
+  @if ($link)
   <footer class="text-info__footer">
-    <a href="{{ $link['url'] }}" class="link link--arrow text bold">
+    <a href="{{ $link['url'] }}" class="link link--arrow link--invert text bold">
       {{ $link['title'] }}
     </a>
   </footer>
+  @endif
 </div>
+
+@endif
