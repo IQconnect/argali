@@ -9,7 +9,10 @@ const CONFIG = {
       const { TRIGGER, ELEM } = CONFIG;
       this.$trigger = document.querySelector(TRIGGER);
       this.$elem = document.querySelector(ELEM);
-      this.addEvent();
+      
+      if(this.$elem) {
+        this.addEvent();
+      }
     },
   
     addEvent() {

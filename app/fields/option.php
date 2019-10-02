@@ -52,20 +52,22 @@ $option_page
         ->addText('footer_nip', ['label' => 'NIP'] )
         ->addText('footer_regon', ['label' => 'REGON'] )
     ->addTab('Formularz kontaktowy', ['placement' => 'left'])
-        ->addText('office_title', ['label' => 'Tytuł biuro sprzedaży'])
-        ->addTextarea('office_content', ['label' => 'Treść biuro sprzedaży'])
-        ->addRepeater('office_persons', ['label' => 'Osoby do kontatku'])
-            ->addImage('img',  ['label' => 'Zdjęcie'])
-            ->addGroup('contact',  ['label' => 'Informacje kontaktowe'])
-                ->addText('name', ['label' => 'Imię i nazwisko'])
-                ->addText('tel', ['label' => 'Telefon'])
-                ->addText('mail', ['label' => 'E-mail'])
-            ->endGroup()
-        ->endRepeater()    
-        ->addText('form_title', ['label' => 'Tytuł formularza'])
-        ->addText('form_subtitle', ['label' => 'Podtytuł formularza'])
-        ->addTextarea('form_terms', ['label' => 'Treść checbkoxa'])
-        ->addImage('form_bg', ['label' => 'Zdjęcie w tle']);
+        ->addGroup('contact', ['label'=> ' '])
+            ->addTab('Info')
+                ->addFields(get_field_partial('components.text-info'))
+            ->addTab('Formularz')
+                ->addText('title', ['label' => 'Tytuł', 'default_value' => 'Formularz kontaktowy'])
+                ->addText('name', ['label' => 'Placeholder Nazwa', 'default_value' => 'Imię i nazwsiko'])
+                ->addText('topic', ['label' => 'Placeholder Temat', 'default_value' => 'Temat'])
+                ->addText('email', ['label' => 'Placeholder Adres e-mail', 'default_value' => 'Adres e-mail'])
+                ->addText('phone', ['label' => 'Placeholder Telefon', 'default_value' => 'Telefon'])
+                ->addText('message', ['label' => 'Placeholder Wiadomość', 'default_value' => 'Wiadomość'])
+                ->addText('button', ['label' => 'Przycisk', 'default_value' => 'Wyślij'])
+                ->addWysiwyg('terms', ['label' => 'Regułka prawna', 'default_value' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Argali Sp. z o. o. spółkę akcyjną z siedzibą w Adres... w celu kontaktu przedstawiciela Spółki i udzielenia odpowiedzi na wiadomość przesłaną za pośrednictwem formularza kontaktowego.'])
+                ->addTextarea('thankyou', ['label' => 'Podziękowanie','new_lines'=>'br', 'default_value' => 'Dziękujemy za wysłanie formularza. <br>Nasz konsultant skontaktuje się z Tobą jak najszybciej to możliwe.<br><br>W tym czasie zapraszamy do zapoznania się z naszą ofertą.<br><br>'])
+                ->addLink('link', ['label'=>'Link w podziękowaniu'])
+        ->endGroup();
+    ;
         
 
     

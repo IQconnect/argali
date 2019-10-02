@@ -255,6 +255,10 @@ function image($id, $size, $class) {
     return wp_get_attachment_image($id, $size, false, ['class'=>$class]);
 }
 
+function option($key) {
+    return get_field($key, 'options');
+}
+
 // Our custom post type function
 function create_offert() {
  

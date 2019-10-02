@@ -1,100 +1,131 @@
 .form {
-  &__row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: ($gutter * 6);
+  $root: &;
+
+  @include cssLock("margin-top", 360, 1920, (gutter_num(-3), gutter_num(-4)));
+  @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(4)));
+  @include cssLock("padding-left", 360, 1920, (gutter_num(2), gutter_num(3)));
+  @include cssLock("padding-right", 360, 1920, (gutter_num(2), gutter_num(3)));
+
+  background: theme-color("light");
+  position: relative;
+
+  &__header {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
   }
 
-  &__col {
-    margin-bottom: ($gutter * 3);
+  &__wrapper {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
 
-    &--message {
-      display: grid;
-      grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: gutter(3) gutter(4);
+  }
+
+  &__input-wrapper {
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(2);
+      height: 1px;
+      background-color: theme-color(special);
     }
 
-    &--send {
-      margin-top: ($gutter * 5);
-      width: 50%;
+    &--textarea {
+      grid-column: 2 span;
     }
   }
 
   &__input {
-    border-radius: $gutter * 3;
-    outline: none;
-    border: none;
-    padding-left: ($gutter * 2);
-    width: 100%;
-    height: ($gutter * 4);
-  }
-
-  &__textarea {
-    border-radius: $gutter * 3;
-    outline: none;
-    padding: ($gutter * 2) 0 0 ($gutter * 2);
-    border: none;
-    width: 100%;
-    resize: none;
-  }
-
-  &__label {
-    margin: $gutter ($gutter * 2) $gutter ($gutter * 2);
-    color: color("light");
-
-    &--textnearcheck {
-      font-size: ($gutter * 1.1);
-    }
-  }
-
-  &__labelcheck {
-    padding-top: ($gutter * 0.4);
-    padding-left: ($gutter * 4);
-    display: block;
-    color: color("light");
-  }
-
-  &__checkcontainer {
-    display: block;
-    position: relative;
-  }
-
-  &__check {
+    font-family: map-get($font-family, main);
+    font-size: gutter(1.8);
+    letter-spacing: gutter(0.2);
     border: 0;
     outline: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
+    min-height: gutter(2);
+    max-width: 100%;
+    min-width: 100%;
+    width: 100%;
+    box-shadow: inset 0 gutter(5) theme-color(light) !important;
+  }
+
+  &__checkbox-wrapper {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    position: relative;
+    color: lighten(theme-color(dark), 50%);
+    display: block;
+    width: 100%;
+    padding-left: gutter(4);
     cursor: pointer;
-    border-radius: $gutter;
-    -webkit-appearance: none;
-    background-color: color("light");
-    box-shadow:
-      0 1px 2px (color("primary")),
-      inset 0 -15px 10px -12px (color("dark"));
-    padding: ($gutter * 0.8);
-    -webkit-user-select: none;
+  }
 
-    /* Safari */
-    -moz-user-select: none;
+  &__checkbox-trigger {
+    position: absolute;
+    left: 0;
+    top: gutter(0.65);
+    display: inline-block;
+    width: gutter(3);
+    height: gutter(2.3);
+    border: 1px solid theme-color(special);
+    transition: $transition;
 
-    /* Firefox */
-    -ms-user-select: none;
+    &::before,
+    &::after {
+      @extend .absolute;
 
-    /* IE10+/Edge */
-    user-select: none;
-
-    /* Standard */
-    &:active {
-      box-shadow: 0 1px 2px (color("grey")), inset 0 1px 3px (color("dark"));
+      content: "";
+      width: gutter(1.5);
+      height: 2px;
+      background: theme-color(light);
     }
 
-    &:checked {
-      background-color: color("special");
-      box-shadow:
-        0 1px 2px (color("dark")),
-        inset 0 -15px 10px -12px (color("dark")),
-        inset 15px 10px -12px (color("dark"));
-      color: color("dark");
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__checkbox {
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+
+    &:checked + #{$root}__checkbox-trigger {
+      border-color: theme-color(light);
+      background: theme-color(special);
+    }
+  }
+
+  &__thankyou {
+    @extend .absolute;
+
+    @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(4)));
+    @include cssLock("padding-left", 360, 1920, (gutter_num(2), gutter_num(3)));
+    @include cssLock("padding-right", 360, 1920, (gutter_num(2), gutter_num(3)));
+
+    top: unset;
+    height: calc(100% - #{gutter(10)});
+    background: theme-color(light);
+    opacity: 0;
+    pointer-events: none;
+    transition: $transition;
+  }
+
+  &.-was-send {
+    #{$root}__thankyou {
+      opacity: 1;
+      pointer-events: initial;
     }
   }
 }

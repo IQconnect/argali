@@ -10,7 +10,7 @@
 
 <div class="text-info {{ $class }}">
   <header class="text-info__header">
-    <p class="text-info__label text bold">
+    <p class="text-info__label text">
       {!! $label !!}
     </p>
   </header>

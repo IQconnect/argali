@@ -17,6 +17,12 @@
 
   &__cell {
     position: relative;
+
+    &--2col {
+      display: grid;
+      grid-template-columns: 1.56fr 1fr;
+      grid-gap: gutter(4);
+    }
   }
 
   &__image {

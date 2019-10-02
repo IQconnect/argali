@@ -15,6 +15,7 @@ import rotator from './components/rotator';
 import hamburger from './components/hamburger';
 import popup from './components/popup';
 import ExtraMenu from './components/extra-menu';
+import form from './components/form';
 
 
 /** Populate Router instance with DOM routes */
@@ -35,6 +36,7 @@ jQuery(document).ready(() => {
   hamburger.init();
   popup.init();
   ExtraMenu.init();
+  form.init();
 });
 
 // setTimeout(()=> {

@@ -33,20 +33,5 @@
     </div>
   </div>
 </footer>
-<script>
-  $(function() {
-      $('.form').on('submit', function (e) {
-        e.preventDefault();
-        $.ajax({
-          type: 'post',
-          url: 'https://apartamentyjuno.pl/mail.php',
-          data: $(this).serialize(),
-          success: function () {
-            alert('Wiadomość została wysłana!');
-          }
-        });
-      });
-  });
-</script>
 
 <script async defer src="https://connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v3.2"></script>
