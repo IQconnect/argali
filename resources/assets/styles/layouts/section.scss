@@ -21,6 +21,12 @@
       grid-gap: gutter(18);
       grid-template-columns: 1fr 2.28fr;
     }
+
+    &--no-wrap {
+      @include media(sm) {
+        grid-template-columns: 1fr 2.28fr;
+      }
+    }
   }
 
   &__cell {
@@ -33,6 +39,15 @@
 
       @include media(xl) {
         grid-template-columns: 1.56fr 1fr;
+      }
+    }
+
+    &--end {
+      display: flex;
+      align-items: center;
+
+      @include media(sm) {
+        justify-content: flex-end;
       }
     }
   }
