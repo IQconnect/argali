@@ -9,6 +9,7 @@
 @if ($info)
 
 <div class="text-info {{ $class }}">
+  @if (!$onlyContent)
   <header class="text-info__header">
     <p class="text-info__label text">
       {!! $label !!}
@@ -17,6 +18,9 @@
   <h2 class="text-info__title title">
     {!! $title !!}
   </h2>
+  @endif
+
+  @if (!$onlyHeader)
   <p class="text-info__description text">
     {!! $dsc !!}
   </p>
@@ -26,6 +30,7 @@
       {{ $link['title'] }}
     </a>
   </footer>
+  @endif
   @endif
 </div>
 

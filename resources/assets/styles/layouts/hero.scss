@@ -1,4 +1,6 @@
 .hero {
+  $root: &;
+
   height: calc(100vh - #{gutter(10)});
   position: relative;
   overflow: hidden;
@@ -8,6 +10,19 @@
   @include media(sm) {
     height: calc(100vh - #{gutter(12)});
     margin-top: gutter(12);
+  }
+
+  &--static {
+    &::before {
+      @extend .absolute;
+
+      content: "";
+      background-color: rgba(theme-color(dark), 0.7);
+    }
+
+    .container {
+      z-index: 10;
+    }
   }
 
   .container {

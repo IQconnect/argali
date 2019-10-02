@@ -11,6 +11,14 @@
     @include cssLock("padding-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
   }
 
+  &--light {
+    color: theme-color(light);
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
   &__header {
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
 
@@ -33,6 +41,10 @@
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
 
     max-width: gutter(60);
+
+    @include media(lg) {
+      max-width: 25vw;
+    }
   }
 
   &__footer {

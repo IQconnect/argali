@@ -1,58 +1,7 @@
 .flex {
-  $root: &;
-
-  position: relative;
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-
-  @media (max-width: 998px) {
-    min-height: unset;
-  }
-
   &__content {
-    @extend .container;
-  }
-
-  &__header,
-  &__text {
-    padding-right: 50vw;
-    max-width: 800px;
-
-    @media (max-width: 998px) {
-      padding-left: 0;
-      padding-right: 0;
-    }
-  }
-
-  &__text {
-    color: rgba(color("dark"), 0.6);
-  }
-
-  &__img {
-    @extend .absolute;
-    @extend .image;
-
-    width: 50%;
-    left: unset;
-
-    @media (max-width: 998px) {
-      display: none;
-    }
-  }
-
-  &--reverse {
-    #{$root}__header,
-    #{$root}__text {
-      padding-left: 50vw;
-      padding-right: 0;
-    }
-
-    #{$root}__img {
-      left: 0;
-      right: unset;
+    &--right {
+      opacity: 1;
     }
   }
 }

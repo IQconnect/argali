@@ -4,13 +4,19 @@ namespace App;
 
 use StoutLogic\AcfBuilder\FieldsBuilder;
 
-$builder = new FieldsBuilder('flex');
+$flex = new FieldsBuilder('flex');
 
-$builder
-    ->addTrueFalse('reverse', ['title'=>'Odwróć sekcję?'])
-    ->addText('title', ['title'=>'Tytuł'])
-    ->addText('subtitle', ['title'=>'Subtitle'])
-    ->addTextarea('content', ['title'=>'Content', 'new_lines'=>'br'])
-    ->addImage('img', ['title'=>'Zdjęcie'])
+$flex
+    ->addChoiceField('type', 'select')
+        ->addChoices('text-text', 'text-img')
+    ->addGroup('text-left')
+        ->conditional('type', '==', 'text-text')
+        ->addFields(get_field_partial('components.text-info'))
+    ->endGroup()
+    ->addGroup('text-right')
+        ->conditional('type', '==', 'text-text')
+        ->addTextarea('text', ['label'=>'Content'])
+    ->endGroup()
+
     ;
-return $builder;
+return $flex;

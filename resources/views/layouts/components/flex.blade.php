@@ -1,19 +1,27 @@
 @php
-    $title = $data['title'];
-    $subtitle = $data['subtitle'];
-    $content = $data['content'];
-    $img = $data['img']['ID'];
-    $reverse = $data['reverse'];
+    $textLeft = $data['text-left'];
+    $textRight = $data['text-right']['text'];
+    $type = $data['type'];
 @endphp
 
-<section class="flex @if($reverse) flex--reverse @endif">
-    <div class="flex__content">
-        <header class="flex__header">
-            @include('components.section-header.left', ['title'=>$title , 'subtitle'=>$subtitle  , 'color'=>'dark'])
-        </header>
-        <p class="flex__text text">
-            {!! $content !!}
-        </p>
+@if ($type == 'text-text')
+<section class="section flex">
+    <div class="container">
+        <div class="section__wrapper">
+            <div class="section__cell">
+                @include('components.text.info', ['data'=>$textLeft, 'onlyHeader' => true])
+            </div>
+        </div>
+        <div class="section__wrapper">
+            <div class="section__cell">
+                @include('components.text.info', ['data'=>$textLeft, 'onlyContent' => true])
+            </div>
+            <div class="section__cell">
+                <p class="text-info__description text">
+                    {{ $textRight }}
+                </p>
+            </div>
+        </div>
     </div>
-    {!! image($img, 'full', 'flex__img') !!}
 </section>
+@endif
