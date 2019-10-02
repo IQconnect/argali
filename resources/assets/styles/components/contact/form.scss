@@ -9,6 +9,10 @@
   background: theme-color("light");
   position: relative;
 
+  @media (max-width: map-get($media, lg)) {
+    margin-top: 0;
+  }
+
   &__header {
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
   }
@@ -16,13 +20,24 @@
   &__wrapper {
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
 
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: gutter(3) gutter(4);
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-gap: gutter(4) gutter(4);
+
+    @include media(sm) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__input-wrapper {
+    margin-bottom: gutter(4);
     position: relative;
+
+    @include media(sm) {
+      margin-bottom: 0;
+    }
 
     &::after {
       content: "";
@@ -32,9 +47,13 @@
       top: unset;
       bottom: gutter(-1);
       right: unset;
-      width: gutter(2);
+      width: 100%;
       height: 1px;
       background-color: theme-color(special);
+
+      @include media(sm) {
+        width: gutter(2);
+      }
     }
 
     &--textarea {

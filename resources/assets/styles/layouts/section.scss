@@ -4,6 +4,14 @@
   padding-left: 0;
   padding-right: 0;
 
+  &--dark {
+    background: theme-color(greey);
+
+    @include media(lg) {
+      background: transparent;
+    }
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -20,8 +28,12 @@
 
     &--2col {
       display: grid;
-      grid-template-columns: 1.56fr 1fr;
+      grid-template-columns: 1fr;
       grid-gap: gutter(4);
+
+      @include media(xl) {
+        grid-template-columns: 1.56fr 1fr;
+      }
     }
   }
 

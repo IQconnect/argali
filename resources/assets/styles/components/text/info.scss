@@ -31,6 +31,8 @@
 
   &__description {
     @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    max-width: gutter(60);
   }
 
   &__footer {

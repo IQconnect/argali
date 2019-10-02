@@ -1,0 +1,68 @@
+.person {
+  $root: &;
+
+  @include cssLock("margin-top", 360, 1920, (gutter_num(-3), gutter_num(-4)));
+  @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(4)));
+  @include cssLock("padding-left", 360, 1920, (gutter_num(2), gutter_num(3)));
+  @include cssLock("padding-right", 360, 1920, (gutter_num(2), gutter_num(3)));
+
+  background: theme-color("light");
+  position: relative;
+
+  @media (max-width: map-get($media, xl)) {
+    margin-top: 0;
+  }
+
+  &__header {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(4), gutter_num(8))
+    );
+  }
+
+  &__image {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
+
+    width: gutter(20);
+    height: gutter(20);
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__info {
+    font-style: normal;
+  }
+
+  &__name {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2.5), gutter_num(4.5))
+    );
+
+    text-transform: uppercase;
+    letter-spacing: gutter(0.5);
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(8);
+      height: 1px;
+      background-color: theme-color(special);
+    }
+  }
+}

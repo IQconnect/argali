@@ -66,6 +66,8 @@ $option_page
                 ->addWysiwyg('terms', ['label' => 'Regułka prawna', 'default_value' => 'Wyrażam zgodę na przetwarzanie moich danych osobowych przez Argali Sp. z o. o. spółkę akcyjną z siedzibą w Adres... w celu kontaktu przedstawiciela Spółki i udzielenia odpowiedzi na wiadomość przesłaną za pośrednictwem formularza kontaktowego.'])
                 ->addTextarea('thankyou', ['label' => 'Podziękowanie','new_lines'=>'br', 'default_value' => 'Dziękujemy za wysłanie formularza. <br>Nasz konsultant skontaktuje się z Tobą jak najszybciej to możliwe.<br><br>W tym czasie zapraszamy do zapoznania się z naszą ofertą.<br><br>'])
                 ->addLink('link', ['label'=>'Link w podziękowaniu'])
+            ->addTab('Osoba kontaktowa')
+                ->addRelationship('person', ['label'=> 'Osoba kontakowa', 'post_type'=>'team', 'min'=> 0, 'max'=>1])
         ->endGroup();
     ;
         

@@ -35,7 +35,6 @@
 @import "components/list";
 @import "components/avatar";
 @import "components/mouse";
-@import "components/form";
 @import "components/button";
 @import "components/hamburger";
 @import "components/sub-menu";
@@ -52,6 +51,10 @@
 /** Offert */
 @import "components/offert/list";
 @import "components/offert/block";
+
+/** Contact */
+@import "components/contact/form";
+@import "components/contact/person";
 
 /** Blocks */
 @import "blocks/section-header";

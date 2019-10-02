@@ -56,3 +56,13 @@ section,
 footer {
   z-index: 1;
 }
+
+p {
+  a {
+    transition: $transition;
+
+    &:hover {
+      color: theme-color(special);
+    }
+  }
+}

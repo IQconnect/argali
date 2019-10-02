@@ -278,3 +278,24 @@ function create_offert() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_offert' );
+
+// Our custom post type function
+function create_team() {
+ 
+    register_post_type( 'team',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Zespół' ),
+                'singular_name' => __( 'Zespół' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'zespół'),
+            'supports' => array( 'title', 'thumbnail'),
+            'menu_icon' => 'dashicons-groups',
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_team' );
