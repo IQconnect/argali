@@ -14,5 +14,7 @@ $builder
             ->addLayout(get_field_partial('components.homepage'))
             ->addLayout('contact')
             ->addLayout(get_field_partial('components.flex'))
+            ->addLayout(get_field_partial('components.gallery'))
+            ->addLayout(get_field_partial('components.team'))
     ;
 return $builder;

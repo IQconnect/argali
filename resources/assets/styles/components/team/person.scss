@@ -1,0 +1,16 @@
+.team-person {
+  &__img {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+  }
+
+  &__name {
+    margin: gutter(2) 0 gutter(1);
+  }
+
+  &__job {
+    margin: 0;
+    color: color(dark);
+  }
+}

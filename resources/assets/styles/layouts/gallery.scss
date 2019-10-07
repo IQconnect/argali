@@ -1,12 +1,25 @@
 .gallery {
   width: 100%;
-  padding: ($gutter * 10) 0;
+
+  .flickity-viewport {
+    height: 100vw !important;
+
+    @include media(sm) {
+      height: calc(100vw / 3) !important;
+    }
+  }
 
   &__cell {
     position: relative;
-    width: 50%;
-    padding-top: 30%;
-    margin: 0 ($gutter * 6);
+    width: 100vw;
+    height: 100vw;
+    margin: 0;
+
+    @include media(sm) {
+      width: calc(100vw / 3);
+      height: calc(100vw / 3);
+      margin: 0 ($gutter * 3);
+    }
 
     img {
       @extend .image;
@@ -14,9 +27,5 @@
 
       max-width: 100%;
     }
-  }
-
-  & + .section {
-    padding-top: 0;
   }
 }

@@ -7,19 +7,31 @@ const CONFIG = {
 
 const Slider = {
     init() {
-        const { ELEM, CELL } = CONFIG;
+        const { ELEM } = CONFIG;
         this.elem = document.querySelectorAll(ELEM);
         if (this.elem) {
-            this.elem.forEach(element => {
-                this.slider = new Flickity(element, {
-                    pageDots: false,
-                    prevNextButtons: false,
-                    cellSelector: CELL,
-                    wrapAround: true,
-                    autoPlay: true,
-                });
+            this.createSlider();
+            this.resize();
+        }
+    },
 
+    createSlider() {
+        const { CELL } = CONFIG;
+
+        this.elem.forEach(element => {
+            this.slider = new Flickity(element, {
+                pageDots: false,
+                prevNextButtons: false,
+                cellSelector: CELL,
+                wrapAround: true,
+                autoPlay: true,
             });
+        });
+    },
+
+    resize() {
+        if (this.elem) {
+            this.slider.resize();
         }
     },
 };

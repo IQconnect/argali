@@ -14,8 +14,10 @@ const FORM = {
         this.textarea = document.querySelector(TEXTAREA);
         this.class = CLASS;
 
-        this.addEvents();
-        this.autoSize();
+        if(this.elem) {
+            this.addEvents();
+            this.autoSize();
+        }
     },
 
     addEvents() {

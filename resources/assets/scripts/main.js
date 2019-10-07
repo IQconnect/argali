@@ -39,7 +39,7 @@ jQuery(document).ready(() => {
   form.init();
 });
 
-// setTimeout(()=> {
-//   slider.resize();
-// }, 1000)
+setTimeout(()=> {
+  slider.resize();
+}, 1000)
 

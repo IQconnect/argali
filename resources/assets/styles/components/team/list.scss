@@ -1,0 +1,19 @@
+.team-list {
+  @include cssLock("margin-top", 360, 1920, (gutter_num(4), gutter_num(9)));
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 0;
+  grid-gap: gutter(3);
+
+  @include media(xs) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @include media(sm) {
+    grid-template-columns: repeat(3, gutter(24));
+    grid-gap: gutter(6);
+  }
+}
