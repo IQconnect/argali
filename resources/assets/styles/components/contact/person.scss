@@ -8,6 +8,7 @@
 
   background: theme-color("light");
   position: relative;
+  box-shadow: 0 gutter(2) gutter(4) gutter(-3) rgba(theme-color(dark), 0.6);
 
   @media (max-width: map-get($media, xl)) {
     margin-top: 0;
