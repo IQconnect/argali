@@ -43,3 +43,4 @@ setTimeout(()=> {
   slider.resize();
 }, 1000)
 
+
