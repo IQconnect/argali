@@ -16,5 +16,7 @@ $invest
         ->addText('short_loc', ['label'=> 'Krótka lokalizacja'])
         ->addTextarea('dsc', ['label'=> 'Opis', 'new_lines'=>'br', 'rows'=>6])
         ->addLink('link', ['label'=> 'Link'])
+    ->addTab('Map', ['label'=>'Plan osiedla','placement' => 'left'])
+        ->addImage('map_image', ['label'=>'Zdjęcia osiedla'])
     ;
 return $invest;
