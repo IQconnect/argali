@@ -105,6 +105,20 @@
       position: initial;
     }
   }
+
+  &--small {
+    @extend .overlay;
+
+    height: 30vw;
+    color: color("light");
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: gutter(4);
+
+    .container {
+      height: auto;
+    }
+  }
 }
 
 @keyframes show {

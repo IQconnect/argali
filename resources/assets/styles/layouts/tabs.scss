@@ -1,0 +1,69 @@
+.tabs {
+  @include cssLock("padding-top", 360, 1920, (gutter_num(4), gutter_num(8)));
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    overflow-x: auto;
+
+    @include media(sm) {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: gutter(6);
+    }
+  }
+
+  &__elem {
+    width: 100%;
+    margin-right: gutter(3);
+
+    @include media(sm) {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    @include cssLock("padding", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    display: block;
+    background: color(dark-greey);
+    color: color(special-dark);
+    width: 100%;
+    transition: $transition;
+    white-space: nowrap;
+
+    &:hover {
+      background: darken(color(dark-greey), 20%);
+    }
+
+    &.-is-active {
+      background: color(special-dark);
+      color: color(light);
+
+      &:hover {
+        background: lighten(color(special-dark), 20%);
+      }
+    }
+  }
+
+  &__title {
+    text-transform: uppercase;
+    letter-spacing: gutter(0.5);
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(8);
+      height: 1px;
+      background-color: theme-color(special);
+    }
+  }
+}

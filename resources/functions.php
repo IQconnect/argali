@@ -299,3 +299,25 @@ function create_team() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_team' );
+
+// Our custom post type function
+function create_investitions() {
+ 
+    register_post_type( 'inwestycje',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Inwestycje' ),
+                'singular_name' => __( 'Inwestycje' )
+            ),
+            'public' => true,
+            'has_archive' => true,
+            'rewrite' => array('slug' => 'inwestycje'),
+            'supports' => array( 'title', 'thumbnail', ),
+            'menu_icon' => 'dashicons-admin-multisite',
+            'taxonomies'  => array( 'category' ),
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_investitions' );

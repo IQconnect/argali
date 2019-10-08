@@ -1,0 +1,54 @@
+.posts {
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: gutter(3);
+
+    @include media(xs) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__elem {
+    @extend .overlay;
+
+    display: block;
+    position: relative;
+    padding-top: 60%;
+    z-index: 10;
+    color: color(light);
+
+    &::before {
+      transition: $transition;
+    }
+
+    &:hover {
+      &::before {
+        background-color: rgba(color("dark"), 0.8);
+      }
+    }
+  }
+
+  &__title {
+    position: absolute;
+    left: gutter(2);
+    bottom: gutter(6);
+  }
+
+  &__label {
+    position: absolute;
+    left: gutter(2);
+    bottom: gutter(2);
+    text-transform: uppercase;
+  }
+
+  &__image {
+    @extend .absolute;
+    @extend .image;
+
+    z-index: -1;
+  }
+}

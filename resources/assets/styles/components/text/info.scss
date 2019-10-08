@@ -13,6 +13,10 @@
 
   &--light {
     color: theme-color(light);
+
+    .link--invert::after {
+      filter: invert(0);
+    }
   }
 
   &--center {

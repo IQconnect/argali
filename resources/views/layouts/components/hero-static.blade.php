@@ -1,5 +1,5 @@
 @php
-  $img = $data['image']['ID'];
+  $img = $data['img_id'] ? $data['img_id']  : $data['image']['ID'];
   $info = $data['text-info'];
 @endphp
 

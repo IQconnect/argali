@@ -73,7 +73,9 @@ $option_page
                 ->addLink('link', ['label'=>'Link w podziękowaniu'])
             ->addTab('Osoba kontaktowa')
                 ->addRelationship('person', ['label'=> 'Osoba kontakowa', 'post_type'=>'team', 'min'=> 0, 'max'=>1])
-        ->endGroup();
+        ->endGroup()
+    ->addTab('Inwestycje', ['placement' => 'left'])
+        ->addRelationship('invest_featured', ['label'=> 'Inwestycja wyróżniona', 'post_type'=>'inwestycje', 'min'=> 0, 'max'=>1])
     ;
         
 
