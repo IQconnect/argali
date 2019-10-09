@@ -1,0 +1,33 @@
+.colage {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: gutter(6);
+
+  @include media(lg) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__img {
+    @extend .image;
+
+    max-width: 100%;
+    height: auto;
+    display: none;
+
+    @include media(lg) {
+      height: 100%;
+      display: initial;
+    }
+
+    &:nth-child(1) {
+      display: initial;
+
+      @include media(lg) {
+        display: initial;
+        grid-row: 1 / 3;
+        grid-column: 2;
+      }
+    }
+  }
+}

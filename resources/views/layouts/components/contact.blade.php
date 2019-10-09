@@ -2,7 +2,7 @@
   $contactInfo = option('contact');
 @endphp
 
-<section class="section section--dark">
+<section class="section section--dark" id="contact">
   <div class="container">
       <div class="section__wrapper">
           <div class="section__cell">

@@ -11,6 +11,10 @@
     @include media(sm) {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      gap: gutter(3);
+    }
+
+    @include media(lg) {
       gap: gutter(6);
     }
   }

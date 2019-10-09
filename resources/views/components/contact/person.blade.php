@@ -1,5 +1,5 @@
 @php
-    $person = option('contact')['person'][0];
+    $person = get_field('person')[0] ? get_field('person')[0] : option('contact')['person'][0];
     $id = $person->ID;
     $title = get_field('job_title', $id);
     $image = get_post_thumbnail_id($id);

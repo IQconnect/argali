@@ -1,0 +1,54 @@
+.tooltipster {
+  &-box,
+  &-arrow {
+    border: 0 !important;
+  }
+
+  &-content {
+    padding: 0 !important;
+  }
+
+  &-base {
+    min-width: gutter(45);
+    max-width: 100%;
+  }
+}
+
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-top .tooltipster-arrow-background,
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-border,
+.tooltipster-sidetip.tooltipster-bottom .tooltipster-arrow-background {
+  border-top-color: color(special-dark) !important;
+  border-bottom-color: color(special-dark) !important;
+}
+
+.tooltip {
+  &__wrapper {
+    @include cssLock("padding", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock("padding-right", 360, 1920, (gutter_num(8), gutter_num(16)));
+
+    background: color(special-dark);
+  }
+
+  &__title {
+    @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(6)));
+
+    text-transform: uppercase;
+    letter-spacing: gutter(0.2);
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(8);
+      height: 1px;
+      background-color: theme-color(special);
+    }
+  }
+}

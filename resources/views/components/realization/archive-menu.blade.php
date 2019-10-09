@@ -17,7 +17,7 @@
                 @foreach ($cats as $cat)
                 <li class="tabs__elem">
                     <a href="?cat={{ $cat->slug }}" class="tabs__link  @if($loop->first && !$_GET['cat'] || $_GET['cat'] == $cat->slug) -is-active @endif" tab-link>
-                        <span class="tabs__title subtitle light">
+                        <span class="tabs__title major-text light">
                             {{ $cat->name }}
                         </span>
                     </a>

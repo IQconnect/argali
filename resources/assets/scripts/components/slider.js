@@ -30,7 +30,7 @@ const Slider = {
     },
 
     resize() {
-        if (this.elem) {
+        if (this.elem.length) {
             this.slider.resize();
         }
     },

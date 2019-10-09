@@ -12,6 +12,10 @@
     }
   }
 
+  &--clear-top {
+    padding-top: 0;
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;

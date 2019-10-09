@@ -1,0 +1,32 @@
+.icons {
+  list-style: none;
+  padding: 0;
+
+  &__elem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: gutter(1);
+  }
+
+  &__icon-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__icon {
+    margin-right: $gutter;
+    width: gutter(3);
+    height: gutter(3);
+  }
+
+  a {
+    transition: $transition;
+
+    &:hover {
+      color: color(special);
+    }
+  }
+}

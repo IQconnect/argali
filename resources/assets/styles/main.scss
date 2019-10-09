@@ -1,5 +1,5 @@
 /** Vendors */
-
+@import "../../../node_modules/tooltipster/dist/css/tooltipster.bundle.min.css";
 @import "vendors/scss-lock/css-lock";
 @import "vendors/fonts";
 
@@ -41,9 +41,12 @@
 @import "components/icon-box";
 @import "components/price";
 @import "components/link";
+@import "components/icons";
+@import "components/colage";
 
 /** Realization */
 @import "components/realization/info";
+@import "components/realization/slider";
 
 /** Text */
 @import "components/text/info";
@@ -96,6 +99,10 @@
 @import "layouts/side-box";
 @import "layouts/tabs";
 @import "layouts/posts";
+@import "layouts/map";
+@import "layouts/tooltipster.scss";
+@import "layouts/features.scss";
+@import "layouts/google-map.scss";
 
 /** PAges */
 @import "pages/znajdz-mieszkanie";

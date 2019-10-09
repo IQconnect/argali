@@ -1,0 +1,88 @@
+/* external css: flickity.css */
+
+.gallery-invest {
+  $root: &;
+
+  position: relative;
+  height: max-content;
+  display: none;
+  border-bottom: 1px solid color(dark);
+
+  &.-is-active {
+    display: initial;
+    animation: slider-in ($transition * 2) both;
+  }
+
+  &__cell {
+    opacity: 1;
+    width: 100%;
+    display: inline-block !important;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__wrapper {
+    width: 100%;
+    max-width: gutter(100);
+
+    &--dont-transform {
+      .flickity-slider {
+        @include media(md) {
+          transform: none !important;
+        }
+      }
+    }
+
+    &--nav {
+      @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+      padding: 0;
+      width: auto;
+
+      &::before {
+        display: none;
+      }
+
+      #{$root}__cell {
+        width: calc(100% / 4);
+        margin: ($gutter * 1);
+
+        @include media(md) {
+          width: $gutter * 12.5;
+        }
+      }
+
+      #{$root}__image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .flickity-prev-next-button {
+    top: 80%;
+  }
+
+  .flickity-prev-next-button.previous {
+    left: unset;
+    right: $gutter * 5.5;
+  }
+
+  .flickity-viewport {
+    transition: height $transition;
+  }
+}
+
+@keyframes slider-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,136 @@
+.map {
+  $root: &;
+
+  position: relative;
+
+  .container {
+    position: relative;
+  }
+
+  &__title {
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
+  }
+
+  &__info {
+    @include cssLock("padding", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "padding-right",
+      360,
+      1920,
+      (gutter_num(8), gutter_num(16))
+    );
+
+    position: absolute;
+    width: gutter(45);
+    top: gutter(1);
+    right: 0;
+    background: color(dark-greey);
+    z-index: 10;
+    opacity: 0;
+    transition: $transition;
+  }
+
+  &__info-title {
+    @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(4), gutter_num(6))
+    );
+
+    text-transform: uppercase;
+    letter-spacing: gutter(0.2);
+    position: relative;
+
+    &::after {
+      content: "";
+
+      @extend .absolute;
+
+      top: unset;
+      bottom: gutter(-1);
+      right: unset;
+      width: gutter(8);
+      height: 1px;
+      background-color: theme-color(special);
+    }
+  }
+
+  &__info-button {
+    background: color(dark-greey);
+    position: absolute;
+    width: gutter(4);
+    height: gutter(4);
+    top: gutter(-0.5);
+    right: gutter(3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 20;
+
+    @include media(xs) {
+      right: 0;
+      top: gutter(1);
+    }
+
+    &:hover + #{$root}__info {
+      opacity: 1;
+    }
+  }
+
+  &__info-img {
+    height: 60%;
+    width: auto;
+  }
+
+  &__navigation {
+    @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+
+    display: grid;
+    grid-template-columns: 1fr;
+
+    @include media(xs) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: gutter(3);
+    }
+
+    @include media(lg) {
+      gap: gutter(6);
+    }
+  }
+
+  &__color-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  &__color {
+    width: gutter(10);
+    height: gutter(4);
+    margin-right: gutter(2);
+
+    &--free {
+      background-color: color(free);
+    }
+
+    &--taken {
+      background-color: color(taken);
+    }
+
+    &--sold {
+      background-color: color(sold);
+    }
+  }
+
+  & + .section {
+    padding-top: 0;
+  }
+}

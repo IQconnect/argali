@@ -2,9 +2,10 @@ table {
   border-collapse: collapse;
   text-align: center;
   width: 100%;
+  background-color: color("light");
 
   thead {
-    background-color: color("primary");
+    background-color: color("special-dark");
 
     @media (max-width: 767px) {
       display: none;
@@ -26,7 +27,7 @@ table {
     font-weight: 300;
 
     tr {
-      background-color: rgba(color("primary"), 0.1);
+      background-color: lighten(color("special-dark"), 60%);
 
       @media (max-width: 767px) {
         display: flex;
@@ -34,7 +35,7 @@ table {
       }
 
       &:nth-child(2n) {
-        background-color: rgba(color("primary"), 0.2);
+        background-color: lighten(color("special-dark"), 90%);
       }
     }
 
@@ -44,22 +45,27 @@ table {
 
       span {
         padding: $gutter;
-        color: color("light");
         width: $gutter * 12;
         display: inline-block;
+        text-transform: uppercase;
+        color: color(dark);
 
-        &.wolne {
-          background: color("free");
-          letter-spacing: 2px;
-        }
+        @include media(sm) {
+          color: color("light");
 
-        &.zajęte {
-          background: color("taken");
-          color: color("dark");
-        }
+          &.free {
+            background: color("free");
+            letter-spacing: 2px;
+          }
 
-        &.sprzedane {
-          background: color("sold");
+          &.taken {
+            background: color("taken");
+            color: color("dark");
+          }
+
+          &.sold {
+            background: color("sold");
+          }
         }
       }
 
@@ -127,5 +133,6 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
 }

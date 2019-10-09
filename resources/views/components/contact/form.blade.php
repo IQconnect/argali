@@ -13,7 +13,7 @@
             <input class="form__input" placeholder="{{ $contact['name'] }}" name="name" type="text" required> 
         </div>
         <div class="form__input-wrapper">
-            <input class="form__input" placeholder="{{ $contact['topic'] }}" name="topic" type="text" required>
+            <input class="form__input" value="{{ $title }}" placeholder="{{ $title or $contact['topic'] }}" name="topic" type="text" required>
         </div>
         <div class="form__input-wrapper">
             <input class="form__input" placeholder="{{ $contact['email'] }}" name="email" type="email" required>
@@ -22,7 +22,8 @@
             <input class="form__input" placeholder="{{ $contact['phone'] }}" type="phone" name="phone" required>
         </div>
         <div class="form__input-wrapper form__input-wrapper--textarea">
-            <textarea class="form__input form__input--textarea" rows="1" placeholder="{{ $contact['message'] }}" data-textarea></textarea>
+            <textarea class="form__input form__input--textarea" rows="1" placeholder="{{ $contact['message'] }}" data-textarea>{{ $message }}
+            </textarea>
         </div>
     </div>
     <label class="form__checkbox-wrapper small-text" for="terms">

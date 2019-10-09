@@ -1,5 +1,9 @@
 // import external dependencies
 import 'jquery';
+import 'maphilight';
+import 'image-map-resizer';
+import 'tooltipster';
+
 
 // Import everything from autoload
 import './autoload/**/*';
@@ -11,11 +15,13 @@ import home from './routes/home';
 import aboutUs from './routes/about';
 
 import slider from './components/slider';
+import sliderInvest from './components/slider-invest';
 import rotator from './components/rotator';
 import hamburger from './components/hamburger';
 import popup from './components/popup';
 import ExtraMenu from './components/extra-menu';
 import form from './components/form';
+import gmap from './components/gmap';
 
 
 /** Populate Router instance with DOM routes */
@@ -32,15 +38,21 @@ const routes = new Router({
 jQuery(document).ready(() => {
   routes.loadEvents();
   slider.init();
+  sliderInvest.init();
   rotator.init();
   hamburger.init();
   popup.init();
   ExtraMenu.init();
   form.init();
+  gmap.init();
 });
 
 setTimeout(()=> {
   slider.resize();
+  sliderInvest.resize();
+  $('.map__image').maphilight();
+  $('map').imageMapResize();
+  $('.tooltip').tooltipster();
 }, 1000)
 
 

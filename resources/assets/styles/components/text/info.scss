@@ -8,7 +8,16 @@
   justify-content: flex-start;
 
   &--space-bottom {
-    @include cssLock("padding-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "padding-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
+  }
+
+  &--auto-height {
+    height: auto;
   }
 
   &--light {
@@ -24,7 +33,12 @@
   }
 
   &__header {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
 
     display: flex;
     justify-content: flex-start;
@@ -38,11 +52,21 @@
   }
 
   &__title {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(4), gutter_num(8))
+    );
   }
 
   &__description {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
 
     max-width: gutter(60);
 
@@ -52,6 +76,11 @@
   }
 
   &__footer {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
   }
 }
