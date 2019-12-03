@@ -15,6 +15,7 @@ $builder
             ->addLayout(get_field_partial('components.text'))
             ->addLayout(get_field_partial('components.map'))
             ->addLayout('contact')
+            ->addLayout('contact-form')
             ->addLayout(get_field_partial('components.flex'))
             ->addLayout(get_field_partial('components.gallery'))
             ->addLayout(get_field_partial('components.team'))

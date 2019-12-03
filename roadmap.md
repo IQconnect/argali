@@ -16,3 +16,16 @@
 * [x] Zakodować widok html slidera
 * [x] Podpiąć dane z ACF
 * [x] Sprawdzić RWD
+
+<br>
+## Finansowanie
+
+* [x] Zmienić style / ukryć kropki
+
+<br>
+## Kontakt
+
+* [ ] Sprawdzić która wersja
+* [ ] Zmodyfikować formularz kontaktowy 
+* [ ] Usunąć działanie popupu kontaktowego
+* [ ] Usunąć przycisk napisz do nas

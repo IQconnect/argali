@@ -12,6 +12,16 @@
   width: 100%;
   display: none;
 
+  li {
+    margin: 0 !important;
+    border-bottom: 0 !important;
+    padding: 0 !important;
+
+    &::after {
+      display: none;
+    }
+  }
+
   @include media("md") {
     opacity: 0;
     display: initial;
@@ -20,11 +30,21 @@
     width: auto;
     height: auto;
     position: absolute;
+    background-color: $light;
+  }
+
+  @include mediaTo(sm) {
+    padding: 0;
   }
 
   .menu-item.menu-item a {
     &:hover {
-      color: #5c91dc;
+      color: $special;
+    }
+
+    @include mediaTo(sm) {
+      font-size: gutter(1.8);
+      padding: 0;
     }
   }
 }
