@@ -1,4 +1,4 @@
-<div class="popup-form -is-active" data-popup-form>
+<div class="popup-form" data-popup-form>
     <div class="container">
         @include('components.form')
     </div>

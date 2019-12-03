@@ -1,0 +1,120 @@
+.slider {
+  height: 100vh;
+  position: relative;
+  color: color(light);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  &__container {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__carousel {
+    @extend .absolute;
+
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  &__cell {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__image {
+    @extend .absolute;
+    @extend .image;
+  }
+
+  &__content {
+    @extend .absolute;
+
+    left: unset;
+    background-color: rgba($dark, 0.8);
+    color: $light;
+    padding: gutter(21) gutter(18) gutter(3.2) gutter(4.6);
+    text-transform: uppercase;
+    pointer-events: none;
+
+    @include mediaTo(sm) {
+      padding: gutter(12) gutter(3.2) gutter(3.2);
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+    }
+
+    h1,
+    h2 {
+      @extend .subtitle;
+
+      margin: 0 0 gutter(1);
+      letter-spacing: 2.8px;
+    }
+
+    h3,
+    h4,
+    h5 {
+      @extend .text;
+
+      letter-spacing: 2.1px;
+      line-height: 1.6;
+    }
+
+    ul,
+    p {
+      @extend .large-text;
+
+      color: inherit;
+      font-weight: $medium;
+      margin: gutter(3.8) 0;
+      letter-spacing: 1px;
+    }
+
+    ul {
+      line-height: 1.6;
+      padding-left: 0;
+
+      li {
+        list-style: none;
+
+        &::before {
+          content: "•";
+          font-size: inherit;
+          vertical-align: middle;
+          border-radius: 100%;
+          margin-right: gutter(0.8);
+        }
+      }
+    }
+  }
+
+  .flickity-viewport {
+    width: 100%;
+    height: 100% !important;
+  }
+
+  .flickity-page-dots {
+    bottom: 0;
+    background: $light;
+    padding: gutter(0.8);
+    border-bottom: 1px solid $special-dark;
+
+    .dot {
+      height: gutter(1.5);
+      width: gutter(1.5);
+      border: 2px solid $special-dark;
+      background: $special-dark;
+      opacity: 1;
+      box-shadow: inset 0 0 0 gutter(0.3) white;
+      margin: 0 gutter(0.4);
+
+      &.is-selected {
+        background-color: $special;
+      }
+    }
+  }
+}

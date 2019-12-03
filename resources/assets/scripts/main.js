@@ -22,8 +22,9 @@ import popup from './components/popup';
 import ExtraMenu from './components/extra-menu';
 import form from './components/form';
 import gmap from './components/gmap';
-import scroll from './components/scroll';
+//import scroll from './components/scroll';
 import popupForm from './components/popup-form';
+import contentSlider from './components/content-slider';
 
 
 /** Populate Router instance with DOM routes */
@@ -47,8 +48,9 @@ jQuery(document).ready(() => {
   ExtraMenu.init();
   form.init();
   gmap.init();
-  scroll.init();
+  //scroll.init();
   popupForm.init();
+  contentSlider.init();
 });
 
 setTimeout(() => {

@@ -11,9 +11,10 @@ const Gmap = {
         const { ELEM } = CONFIG;
 
         this.elem = document.querySelector(ELEM);
-        this.pins = JSON.parse(this.elem.dataset.pins);
-        console.log('Init Google Map: ', this.pins);
+        
         if (this.elem) {
+            this.pins = JSON.parse(this.elem.dataset.pins);
+            console.log('Init Google Map: ', this.pins);
             this.initMap();
         }
     },

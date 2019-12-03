@@ -19,5 +19,6 @@ $builder
             ->addLayout(get_field_partial('components.gallery'))
             ->addLayout(get_field_partial('components.team'))
             ->addLayout(get_field_partial('components.img-icon'))
+            ->addLayout(get_field_partial('components.slider'))
     ;
 return $builder;
