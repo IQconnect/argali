@@ -1,10 +1,22 @@
 .slider {
+  $root: &;
+
   height: 100vh;
   position: relative;
   color: color(light);
   display: flex;
   align-items: center;
   justify-content: flex-start;
+
+  &--just-one {
+    .flickity-page-dots {
+      display: none;
+    }
+
+    #{$root}__content {
+      pointer-events: initial;
+    }
+  }
 
   &__container {
     position: relative;
@@ -37,7 +49,6 @@
     background-color: rgba($dark, 0.8);
     color: $light;
     padding: gutter(21) gutter(18) gutter(3.2) gutter(4.6);
-    text-transform: uppercase;
     pointer-events: none;
 
     @include mediaTo(sm) {
@@ -72,10 +83,10 @@
       font-weight: $medium;
       margin: gutter(3.8) 0;
       letter-spacing: 1px;
+      line-height: 1.6;
     }
 
     ul {
-      line-height: 1.6;
       padding-left: 0;
 
       li {

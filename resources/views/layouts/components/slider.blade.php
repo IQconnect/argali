@@ -3,7 +3,7 @@
 @endphp
 
 @if ($slider)
-<section class="slider">
+<section class="slider @if(count($slider) == 1) slider--just-one @endif">
     <div class="slider__carousel">
     @foreach ( $slider as $elem)
         <div class="slider__cell">
