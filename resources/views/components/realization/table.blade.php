@@ -37,6 +37,7 @@
         @php
             $flat = $flat['Dane'];
         @endphp
+        @if ($flat['status'] == 'free')
         <tr>
           <td>
             {{ $flat['name'] != '' ? $flat['name'] : 'X' }}
@@ -78,7 +79,7 @@
           </td>
           <td class="table__plan">
             @if( $flat['status'] == 'free' && $flat['name'] != '')
-            <a data-fancybox href="./?tab=Znajdz%20mieszkanie&dom={{ $loop->index }}">
+            <a href="./?tab=Znajdz%20mieszkanie&dom={{ $loop->index }}">
               <img src="@asset('images/eye.png')" alt="Plan mieszkania...">
             </a>
             @else
@@ -86,6 +87,8 @@
             @endif
           </td>
         </tr>
+        @endif
+        
         @endforeach
       </tbody>
     </table>

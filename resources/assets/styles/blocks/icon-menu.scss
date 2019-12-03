@@ -1,0 +1,70 @@
+.icon-menu {
+  $root: &;
+
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0 0 0 gutter(3.2);
+  padding: 0;
+
+  @include mediaTo(xl) {
+    margin-left: 0;
+  }
+
+  li {
+    &:last-child {
+      margin-right: 0;
+
+      #{$root}__icon {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    @extend .menu-link;
+    @extend .menu-link--large;
+
+    color: color(special);
+    transition: $transition;
+    background: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+
+    @include mediaTo(md) {
+      font-size: gutter(2);
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &--phone {
+      margin-right: gutter(3.2);
+
+      @include mediaTo(xl) {
+        margin-right: 0;
+      }
+
+      @include mediaTo(md) {
+        margin-right: gutter(3.2);
+      }
+    }
+  }
+
+  &__icon {
+    @include cssLock("font-size", 360, 1920, (gutter_num(2), gutter_num(3)));
+
+    margin: 0 gutter(1.6);
+
+    @include mediaTo(md) {
+      margin-top: 0 gutter(1.6);
+    }
+
+    @include mediaTo(xl) {
+      margin: 0 gutter(0.8);
+    }
+  }
+}

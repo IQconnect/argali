@@ -5,6 +5,7 @@
     <div class="preloader" preloader ></div>
     @php do_action('get_header') @endphp
     @include('partials.header')
+    @include('partials.popupForm')
     <div class="wrap" role="document">
       <div class="content">
         <main class="main">
@@ -19,7 +20,6 @@
     </div>
     @php do_action('get_footer') @endphp
     @include('partials.footer')
-    @include('partials.popup')
     @php wp_footer() @endphp
   </body>
 </html>

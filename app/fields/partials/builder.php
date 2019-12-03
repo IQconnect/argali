@@ -12,10 +12,12 @@ $builder
             ->addLayout('hero')
             ->addLayout(get_field_partial('components.hero-static'), ['label'=>'Hero statyczne'])
             ->addLayout('hero-small', ['label'=>'Hero małe'])
-            ->addLayout(get_field_partial('components.homepage'))
+            ->addLayout(get_field_partial('components.text'))
+            ->addLayout(get_field_partial('components.map'))
             ->addLayout('contact')
             ->addLayout(get_field_partial('components.flex'))
             ->addLayout(get_field_partial('components.gallery'))
             ->addLayout(get_field_partial('components.team'))
+            ->addLayout(get_field_partial('components.img-icon'))
     ;
 return $builder;

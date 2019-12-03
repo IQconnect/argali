@@ -1,17 +1,17 @@
 @php
-  $contactInfo = option('contact');
+  $contactInfo = option('contact-section');
 @endphp
 
-<section class="section section--dark" id="contact">
+@if ($contactInfo)
+<section class="section" id="contact">
   <div class="container">
-      <div class="section__wrapper">
-          <div class="section__cell">
-              @include('components.text.info', ['data'=>$contactInfo])
-          </div>
-          <div class="section__cell section__cell--2col">
-            @include('components.contact.form')
-            @include('components.contact.person')
-          </div>
-      </div>
+    <div class="contact-section">
+    @foreach ($contactInfo as $item)
+        <div class="contact-section__wrapper">
+          {!! $item['content'] !!}
+        </div>
+    @endforeach
+    </div>
   </div>
 </section>
+@endif

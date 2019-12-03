@@ -1,15 +1,23 @@
 .hero {
   $root: &;
 
-  height: calc(100vh - #{gutter(10)});
+  height: 100vh;
   position: relative;
   overflow: hidden;
-  margin-top: gutter(10);
   background: color(light);
 
-  @include media(sm) {
-    height: calc(100vh - #{gutter(12)});
-    margin-top: gutter(12);
+  &::before {
+    content: "";
+
+    @extend .absolute;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0.4) 18%,
+        rgba(0, 0, 0, 0) 100%
+      );
   }
 
   &--static {
@@ -26,8 +34,8 @@
   }
 
   .container {
+    z-index: 10;
     position: relative;
-    width: 100%;
     height: 100%;
   }
 
@@ -35,7 +43,7 @@
     position: absolute;
     top: 0;
     bottom: 0;
-    right: 0;
+    left: 0;
     padding-left: 0;
     opacity: 0;
     pointer-events: none;
@@ -45,6 +53,10 @@
     flex-direction: column;
     flex-wrap: nowrap;
     transition: $transition;
+
+    @include mediaTo(md) {
+      padding: 0 gutter(3);
+    }
 
     &.-is-active {
       pointer-events: initial;
@@ -74,10 +86,13 @@
     object-fit: cover;
     z-index: -1;
     opacity: 0;
+    transition: transform $transition * 100;
+    transform: scale(1);
 
     &.-is-active {
       pointer-events: initial;
       animation: showIMG 0.4s ease-in both;
+      transform: scale(1.3);
     }
 
     &.-on-hold {
@@ -100,10 +115,6 @@
     justify-content: flex-end;
     position: absolute;
     bottom: 0;
-
-    @include media(sm) {
-      position: initial;
-    }
   }
 
   &--small {
@@ -113,7 +124,11 @@
     color: color("light");
     display: flex;
     align-items: flex-end;
-    padding-bottom: gutter(4);
+    padding-bottom: 0;
+
+    #{$root}__title {
+      margin-bottom: gutter(4);
+    }
 
     .container {
       height: auto;

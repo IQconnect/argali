@@ -40,7 +40,6 @@
 @import "components/sub-menu";
 @import "components/icon-box";
 @import "components/price";
-@import "components/link";
 @import "components/icons";
 @import "components/colage";
 
@@ -73,6 +72,7 @@
 @import "blocks/bilding";
 @import "blocks/list";
 @import "blocks/small-content";
+@import "blocks/icon-menu";
 
 /** Layouts */
 @import "layouts/section";
@@ -103,6 +103,8 @@
 @import "layouts/tooltipster.scss";
 @import "layouts/features.scss";
 @import "layouts/google-map.scss";
+@import "layouts/contact-icons.scss";
+@import "layouts/popup-form.scss";
 
 /** PAges */
 @import "pages/znajdz-mieszkanie";

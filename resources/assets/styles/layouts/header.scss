@@ -3,38 +3,24 @@
 
   background: theme-color("light");
   color: theme-color("light");
-  padding: ($gutter * 3);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: map-get($z-index, "header");
   transition: $transition;
-
-  @include media(lg) {
-    background:
-      linear-gradient(theme-color("light"), theme-color("light")),
-      linear-gradient(theme-color("greey"), theme-color("greey"));
-    background-size:
-      calc(1 * (100% / 3)) 100%,
-      calc(2 * (100% / 1.5)) 100%;
-    background-repeat: no-repeat;
-    padding: gutter(3) 0;
-  }
+  padding: gutter(0.5) 0;
 
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 
   &--hide {
     @include media(md) {
       padding: $gutter 0;
     }
-  }
-
-  .container {
-    padding: 0;
   }
 
   .row {
@@ -46,24 +32,20 @@
   }
 
   &__brand {
-    width: $gutter * 8;
-    margin-right: $gutter * 10;
+    @include cssLock("max-width", 360, 1920, (gutter_num(10), gutter_num(20)));
+
     z-index: 20;
     display: flex;
     align-items: center;
 
     @include media(md) {
-      width: $gutter * 16;
-      margin-right: 0;
+      width: auto;
       z-index: 20;
     }
 
     img {
-      max-width: 245px;
-
-      @include media(md) {
-        max-width: 100%;
-      }
+      width: auto;
+      max-width: 100%;
     }
   }
 
@@ -82,13 +64,14 @@
     position: absolute;
     top: 0;
     padding: 0 $gutter * 3;
-    width: 100vw;
+    width: 100%;
     max-width: 0;
     height: 100vh;
-    background-color: theme-color("greey");
+    background-color: $light;
     right: -$gutter * 6;
     transition: $transition;
     overflow: hidden;
+    text-transform: uppercase;
 
     @include media(md) {
       position: relative;
@@ -152,6 +135,19 @@
       position: relative;
 
       @include media(md) {
+        margin: 0 ($gutter * 1);
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:last-child {
+          padding-right: 0;
+          margin-right: 0;
+        }
+      }
+
+      @include media(xl) {
         margin: 0 ($gutter * 2);
 
         &:first-child {
@@ -180,7 +176,7 @@
       }
 
       a {
-        @extend .text;
+        @extend .menu-link;
 
         color: theme-color("dark");
         padding: $gutter 0;
@@ -198,6 +194,10 @@
           display: initial;
           padding: 0;
           opacity: 1;
+        }
+
+        @include mediaTo(md) {
+          font-size: gutter(2);
         }
       }
 
@@ -239,7 +239,7 @@
     margin: 0;
 
     @include media(md) {
-      padding: 0;
+      padding: 0 gutter(3) 0 gutter(3);
       margin-left: 0;
       flex-direction: row;
     }
@@ -272,6 +272,12 @@
 
     @include media(md) {
       padding: 0 0 0 ($gutter * 3);
+    }
+  }
+
+  &__icon-menu {
+    @include mediaTo(md) {
+      margin-top: gutter(2);
     }
   }
 }

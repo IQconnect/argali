@@ -1,45 +1,46 @@
-<form class="form" id="form" action="https://apartamentyjuno.pl/mail.php" method="POST">
-  <!-- form__row -->
-  <div class="form__row">
-    <div class="form__col">
-      <label for="name" class="form__label text">Imie i nazwisko</label>
-      <input id="name" name="name" type="text" class="form__input" />
+@php
+    $contact = option('contact');
+@endphp
+
+<form action="./" method="POST" class="form" validation data-form>
+    <h3 class="form__title uppercase subtitle">
+      {!! $contact['title'] !!}
+    </h3>
+    <button class="form__close" data-toggle-form>
+
+    </button>
+    <div class="form__wrapper">
+        <div class="form__input-wrapper">
+            <label class="form__label" for="name">
+                {{ $contact['name'] }}
+            </label>
+            <input class="form__input" id="name" name="name" type="text" required> 
+        </div>
+        <div class="form__input-wrapper">
+            <label class="form__label" for="phone"> {{ $contact['phone'] }}</label>
+            <input class="form__input" type="phone" id="phone" name="phone" required>
+        </div>
+        <div class="form__input-wrapper">
+            <label class="form__label" for="email"> {{ $contact['email'] }}</label>
+            <input class="form__input" name="email" id="email" type="email" required>
+        </div>
+        <div class="form__input-wrapper form__input-wrapper--textarea">
+            <label class="form__label" for="message"> {{ $contact['message'] }}</label>
+            <textarea class="form__input form__input--textarea" name="message" id="message" rows="1" data-textarea></textarea>
+        </div>
     </div>
-  </div>
-  <!-- form__row -->
-  <div class="form__row">
-    <div class="form__col">
-      <label for="mail" class="form__label text">Mail</label>
-      <input id="mail" name="mail" type="mail" class="form__input" />
-    </div>
-    <div class="form__col">
-      <label for="tel" class="form__label text">Telefon</label>
-      <input id="tel" name="tel" type="tel" class="form__input" />
-    </div>
-  </div>
-  <!-- form__row-->
-  <div class="form__col">
-    <label for="message" class="form__label text" for="name">Wiadomość</label>
-    <textarea id="message" name="message" class="form__textarea" rows="12" name="textarea"></textarea>
-  </div>
-  <!-- form__checkcontainer -->
-  <div class="form__checkcontainer">
-    <div class="form__col-message">
-      <input id="checkbox" name="checkbox" class="form__check" type="checkbox" name="checkbox" />
-      <label
-        class="form__labelcheck small-text form__label--textnearcheck "
-        for="checkbox"
-      >
-        {{ get_field('form_terms', 'options') }}
-      </label>
-    </div>
-  </div>
-  <!-- form__row -->
-  <div class="form__row">
-    <div class="form__col--send">
-      <button class="button button--secondary text  main text--thin">
-        Wyślij
-      </button>
-    </div>
-  </div>
+    <label class="form__checkbox-wrapper small-text" for="terms">
+        <input type="checkbox" name="terms" id="terms" class="form__checkbox" required>
+        <span class="form__checkbox-trigger"></span>
+        {!! $contact['terms'] !!}
+    </label>
+    <button class="form__button button">
+        {{ $contact['button'] }}
+    </button>
+    <p class="form__thankyou text">
+        {!! $contact['thankyou'] !!}
+        @if ($contact['link'])
+            <a href="{{ $contact['link']['url'] }}" class="text bold link link--arrow link--invert">{{ $contact['link']['title'] }}</a>    
+        @endif
+    </p>
 </form>

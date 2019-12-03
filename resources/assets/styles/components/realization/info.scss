@@ -1,21 +1,14 @@
 .realization-info {
-  background: rgba(theme-color(special-dark), 0.8);
   color: theme-color(light);
   width: 100%;
   height: 100%;
-  padding: gutter(3);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   justify-content: center;
 
-  @media (min-width: map-get($map: $media, $key: sm)) {
-    @include cssLock("padding", 360, 1920, ($gutter_num, $gutter_num * 3));
-  }
-
   @include media(sm) {
     width: $gutter * 70;
-    background: theme-color(special-dark);
     display: block;
     height: auto;
   }
@@ -29,19 +22,10 @@
     color: theme-color(special);
   }
 
-  &__icon {
-    @include cssLock("margin-right", 360, 1920, ($gutter_num, $gutter_num * 2));
-  }
-
   &__title {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
-  }
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3.2), gutter_num(6.4)));
 
-  &__description {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
-  }
-
-  &__footer {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(), gutter_num(2)));
+    text-shadow: 0 0 6px black;
+    text-transform: uppercase;
   }
 }

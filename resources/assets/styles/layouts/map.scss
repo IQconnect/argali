@@ -1,19 +1,40 @@
 .map {
   $root: &;
 
+  @include cssLock("padding-top", 360, 1920, (gutter_num(2), gutter_num(4)));
+
   position: relative;
 
   .container {
     position: relative;
   }
 
-  &__title {
+  &__wrapper-title {
     @include cssLock(
       "margin-bottom",
       360,
       1920,
       (gutter_num(2), gutter_num(4))
     );
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+
+    @include media(sm) {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__wrapper-map {
+    position: relative;
+  }
+
+  &__title {
+    white-space: nowrap;
+    margin-right: gutter(4);
   }
 
   &__info {
@@ -25,14 +46,17 @@
       (gutter_num(8), gutter_num(16))
     );
 
+    display: none;
     position: absolute;
     width: gutter(45);
-    top: gutter(1);
+    top: 0;
     right: 0;
     background: color(dark-greey);
     z-index: 10;
     opacity: 0;
     transition: $transition;
+    user-select: none;
+    max-width: 100%;
   }
 
   &__info-title {
@@ -67,17 +91,12 @@
     position: absolute;
     width: gutter(4);
     height: gutter(4);
-    top: gutter(-0.5);
-    right: gutter(3);
+    top: 0;
+    right: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 20;
-
-    @include media(xs) {
-      right: 0;
-      top: gutter(1);
-    }
 
     &:hover + #{$root}__info {
       opacity: 1;
@@ -90,15 +109,17 @@
   }
 
   &__navigation {
-    @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
-
     display: grid;
     grid-template-columns: 1fr;
+    width: auto;
+    margin: gutter(1) 0;
+    gap: gutter(0.5);
 
     @include media(xs) {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: gutter(3);
+      margin: 0;
     }
 
     @include media(lg) {

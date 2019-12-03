@@ -8,4 +8,15 @@
     max-width: $gutter * 100;
     color: rgba(color("dark"), 0.6);
   }
+
+  &__wrapper {
+    text-transform: uppercase;
+
+    p {
+      @extend .subtitle;
+
+      font-weight: $thin;
+      line-height: 1.8;
+    }
+  }
 }

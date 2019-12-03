@@ -1,1 +1,40 @@
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,500,600,700,800,900&display=swap&subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=latin-ext");
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../fonts/MartinGotURWTOT-Med.eot");
+  src:
+    url("../fonts/MartinGotURWTOT-Med.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MartinGotURWTOT-Med.woff2") format("woff2"),
+    url("../fonts/MartinGotURWTOT-Med.woff") format("woff"),
+    url("../fonts/MartinGotURWTOT-Med.ttf") format("truetype"),
+    url("../fonts/MartinGotURWTOT-Med.svg#MartinGotURWTOT-Med") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../fonts/MartinGotURWTOT-Lig.eot");
+  src:
+    url("../fonts/MartinGotURWTOT-Lig.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MartinGotURWTOT-Lig.woff2") format("woff2"),
+    url("../fonts/MartinGotURWTOT-Lig.woff") format("woff"),
+    url("../fonts/MartinGotURWTOT-Lig.ttf") format("truetype"),
+    url("../fonts/MartinGotURWTOT-Lig.svg#MartinGotURWTOT-Lig") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../fonts/MartinGotURWTOT-Bol.eot");
+  src:
+    url("../fonts/MartinGotURWTOT-Bol.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/MartinGotURWTOT-Bol.woff2") format("woff2"),
+    url("../fonts/MartinGotURWTOT-Bol.woff") format("woff"),
+    url("../fonts/MartinGotURWTOT-Bol.ttf") format("truetype"),
+    url("../fonts/MartinGotURWTOT-Bol.svg#MartinGotURWTOT-Bol") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}

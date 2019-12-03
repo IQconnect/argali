@@ -6,7 +6,7 @@
 @endphp
 
 <header class="header" header>
-  <div class="container">
+  <div class="container container--fluid">
     <div class="row">
       <div class="col header__wrapper">
         <a class="header__brand" href="{{ home_url('/') }}">
@@ -21,6 +21,7 @@
           @if (has_nav_menu('primary_navigation'))
             {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'header__menu']) !!}
           @endif
+          @include('blocks.menu-icon')
         </nav>
       </div>
     </div>

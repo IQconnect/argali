@@ -1,9 +1,9 @@
 @php
     $menus = [
         'Znajdź mieszkanie',
-        'Tabelka',
         'Lokalizacja',
-        'Finansowanie',
+        'Galeria',
+        'Dziennik budowy',
     ];
 @endphp
 

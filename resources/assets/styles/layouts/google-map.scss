@@ -1,4 +1,42 @@
 .google-map {
   height: 30vh;
-  min-height: gutter(80);
+  min-height: gutter(60);
+
+  &__tooltip {
+    text-align: center;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @extend .text;
+
+      text-transform: uppercase;
+      font-weight: $thin;
+    }
+
+    p {
+      @extend .small-text;
+
+      line-height: 1.2;
+      padding: gutter(0.5);
+    }
+  }
+
+  &__btn {
+    @extend .small-text;
+
+    display: inline-block;
+    font-weight: $thin;
+    text-transform: uppercase;
+    padding: gutter(0.5) gutter(1.5);
+    margin: gutter(0.5) 0;
+    background: color(dark-greey);
+
+    &:hover {
+      background: color(greey);
+    }
+  }
 }

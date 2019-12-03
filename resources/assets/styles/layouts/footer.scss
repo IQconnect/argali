@@ -1,57 +1,46 @@
 .footer {
-  position: relative;
-  background: rgba(theme-color(dark), 0.8);
-  color: theme-color(light);
-  padding-bottom: 0;
+  background: $special-dark;
 
-  &__title {
-    @include cssLock(
-      "margin-bottom",
-      360,
-      1920,
-      (gutter_num(4), gutter_num(8))
-    );
-  }
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-  &__links {
-    @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(3)));
-
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: gutter(4);
-
-    @include media(md) {
-      grid-template-columns: repeat(3, 1fr);
+    @include mediaTo(md) {
+      flex-direction: column;
     }
   }
 
-  &__list {
-    @include cssLock("margin-top", 360, 1920, (gutter_num(4), gutter_num(8)));
-
-    padding: 0;
-    margin-bottom: 0;
+  &__menu {
     list-style: none;
-  }
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+    grid-auto-flow: column;
+    text-transform: uppercase;
+    color: $light;
+    column-gap: gutter(10);
+    row-gap: gutter(1);
+    margin: 0;
+    padding: 0;
 
-  &__link {
-    transition: $transition;
-
-    &:hover {
-      color: theme-color("special");
+    @include mediaTo(md) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-auto-flow: row;
+      text-align: center;
+      margin-bottom: gutter(3.2);
     }
-  }
 
-  &__copyright-wrapper {
-    @include cssLock("padding", 360, 1920, (gutter_num(2), gutter_num(4)));
-    @include cssLock("margin-top", 360, 1920, (gutter_num(8), gutter_num(16)));
+    a {
+      @extend .small-text;
 
-    background: rgba(theme-color(dark), 0.5);
-    padding-left: 0;
-    padding-right: 0;
-  }
+      transition: $transition;
+      font-weight: $thin;
 
-  &__madeby {
-    width: auto;
-    height: auto;
+      &:hover {
+        color: color(special);
+      }
+    }
   }
 }

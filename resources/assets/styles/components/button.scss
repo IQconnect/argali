@@ -1,78 +1,30 @@
-@mixin button-bg($bg) {
-  background: $bg;
+.button {
+  @extend .button-size;
+
+  background-color: color("special");
+  padding: gutter(2) gutter(6);
+  cursor: pointer;
+  -webkit-appearance: none;
+  text-transform: uppercase;
+  transition: $transition;
+  display: inline-block;
+  color: color(light);
+  font-weight: $thin;
+  border: 0;
 
   &:hover {
-    background: darken($bg, 8%);
-  }
-
-  &:active {
-    background: darken($bg, 25%);
-  }
-}
-
-.button {
-  color: color("light");
-  text-decoration: none;
-  padding: $gutter ($gutter * 4);
-  border-radius: $gutter * 3;
-  font-size: $gutter * 2;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  -webkit-appearance: none;
-  border: 2px solid transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  &--textchange {
-    color: color("secondary");
-  }
-
-  &--primary {
-    @include button-bg(color("primary"));
-  }
-
-  &--primary-light {
-    @include button-bg(color("light"));
-
-    color: color("primary");
-    border-color: rgba(color("primary"), 0.2);
-
-    &:hover {
-      border-color: rgba(color("primary"), 0.5);
-    }
-  }
-
-  &--secondary {
-    @include button-bg(color("secondary"));
-  }
-
-  &--light {
-    @include button-bg(color("light"));
-  }
-
-  &--full-sm {
-    display: block;
-    text-align: center;
-
-    @include media(sm) {
-      display: inline;
-    }
-  }
-
-  &.-is-active {
-    background-color: color("secondary");
+    opacity: 0.8;
+    color: color("light");
   }
 
   &--nav-arrow {
-    border-radius: 0;
-    padding: 0;
-    width: gutter(6);
-    height: gutter(6);
-    transition: $transition;
+    padding: gutter() gutter(2);
+    background: color(light);
+    border: none;
+    color: color(dark);
+  }
 
-    &:hover {
-      background-color: color("greey");
-    }
+  @include mediaTo(sm) {
+    width: 100%;
   }
 }

@@ -16,10 +16,12 @@
 }
 
 .title {
-  @include cssLock("font-size", 360, 1920, (gutter_num(3), gutter_num(6)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(3), gutter_num(5.6)));
 
   font-family: map-get($font-family, title);
-  font-weight: $bold;
+  font-weight: $medium;
+  line-height: 1.4;
+  letter-spacing: gutter(0.6);
 
   @extend %text;
 
@@ -33,7 +35,7 @@
 }
 
 .subtitle {
-  @include cssLock("font-size", 360, 1920, (gutter_num(2), gutter_num(3)));
+  @include cssLock("font-size", 360, 1920, (gutter_num(2.4), gutter_num(3)));
 
   font-family: map-get($font-family, title);
   font-weight: $bold;
@@ -84,7 +86,7 @@
 }
 
 .large-text {
-  @include cssLock("font-size", 360, 1920, (16, 20));
+  @include cssLock("font-size", 360, 1920, (18, 24));
 
   font-family: map-get($font-family, main);
   color: map-get($theme-colors, dark);
@@ -111,4 +113,25 @@
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.menu-link {
+  @extend %text;
+
+  @include cssLock("font-size", 360, 1920, (gutter_num(1), gutter_num(2)));
+
+  font-family: map-get($font-family, main);
+  font-weight: $medium;
+  line-height: 1.8;
+
+  &--large {
+    @include cssLock("font-size", 360, 1920, (gutter_num(0.8), gutter_num(3)));
+  }
+}
+
+.button-size {
+  @include cssLock("font-size", 360, 1920, (gutter_num(1.6), gutter_num(2)));
+
+  font-family: map-get($font-family, main);
+  letter-spacing: 2px;
 }

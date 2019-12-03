@@ -13,7 +13,7 @@ $gallery = $data['gallery'];
     @endforeach
     </div>
     <!-- NAV -->
-    <div class="gallery-invest__wrapper gallery-invest__wrapper--nav @if(count($images) < 3) gallery-invest__wrapper--dont-transform @endif flickity-gallery-nav">
+    <div class="gallery-invest__wrapper gallery-invest__wrapper--nav @if(count($gallery) < 3) gallery-invest__wrapper--dont-transform @endif flickity-gallery-nav">
     @foreach ($gallery as $img)
         <div class="gallery-invest__cell">
         {!! image($img['ID'], 'full', 'gallery-invest__image') !!}

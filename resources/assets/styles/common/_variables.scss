@@ -1,37 +1,51 @@
 /** Import Bootstrap functions */
 @import "~bootstrap/scss/functions";
 
+// COLORS
+$light: #fff;
+$dark: #000;
+$primary: #364ea2;
+$secondary: #dcc38b;
+$greey: #ebe9e6;
+$dark-greey: #d4d4d4;
+$special: #f16927;
+$special-dark: #65686a;
+$free: #93ff93;
+$taken: #ff8c56;
+$sold: #f48785;
+// END COLORS
+
 $theme-colors: (
-  light: #fff,
-  dark: #000,
-  primary: #364ea2,
-  secondary: #dcc38b,
-  greey: #ebe9e6,
-  dark-greey: #d4d4d4,
-  special: #ff8c56,
-  special-dark: #3b3b3b,
-  free: #93ff93,
-  taken: #ff8c56,
-  sold: #f48785
+  light: $light,
+  dark: $dark,
+  primary: $primary,
+  secondary: $secondary,
+  greey: $greey,
+  dark-greey: $dark-greey,
+  special: $special,
+  special-dark: $special-dark,
+  free: $free,
+  taken: $taken,
+  sold: $sold
 );
 
 $media: (
   xs: 576px,
   sm: 768px,
   md: 992px,
-  lg: 1200px,
+  lg: 1280px,
   xl: 1440px
 );
 
 $transition: 0.4s;
 
 $font-family: (
-  main: "Work Sans",
-  title: "Work Sans"
+  main: "Martin Gothic",
+  title: "Martin Gothic"
 );
 
-$gutter: 8px;
-$gutter_num: 8;
+$gutter: 10px;
+$gutter_num: 10;
 
 /** Bootstrap navbar fix (https://git.io/fADqW) */
 $navbar-dark-toggler-icon-bg: none;
@@ -47,4 +61,5 @@ $z-index: (
 $lineSize: 2px;
 
 $bold: 700;
-$medium: 500;
+$medium: 400;
+$thin: 300;

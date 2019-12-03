@@ -26,7 +26,7 @@ $spec = [
   [
     'title'=>'GARAŻ',
     'icon'=>'garage.png',
-    'val'=>$flat['area'],
+    'val'=>$flat['garage'],
   ],
   [
     'title'=>'OGRÓDEK',

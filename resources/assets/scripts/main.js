@@ -22,6 +22,8 @@ import popup from './components/popup';
 import ExtraMenu from './components/extra-menu';
 import form from './components/form';
 import gmap from './components/gmap';
+import scroll from './components/scroll';
+import popupForm from './components/popup-form';
 
 
 /** Populate Router instance with DOM routes */
@@ -45,9 +47,11 @@ jQuery(document).ready(() => {
   ExtraMenu.init();
   form.init();
   gmap.init();
+  scroll.init();
+  popupForm.init();
 });
 
-setTimeout(()=> {
+setTimeout(() => {
   slider.resize();
   sliderInvest.resize();
   $('.map__image').maphilight();

@@ -36,6 +36,52 @@
       }
     }
 
+    &--grid {
+      @include media(md) {
+        margin-top: 0 !important;
+      }
+
+      .flickity-viewport {
+        @include media(md) {
+          height: auto !important;
+        }
+      }
+
+      .flickity-slider {
+        @include media(md) {
+          transform: none !important;
+          position: initial !important;
+          height: auto;
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr;
+          gap: gutter(3);
+        }
+      }
+
+      #{$root}__cell {
+        @include media(md) {
+          transform: none !important;
+          position: relative !important;
+          margin: 0 !important;
+          left: unset !important;
+          padding-top: 100%;
+          width: 100% !important;
+        }
+      }
+
+      #{$root}__image {
+        @include media(md) {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          object-fit: cover !important;
+        }
+      }
+    }
+
     &--nav {
       @include cssLock("margin-top", 360, 1920, (gutter_num(2), gutter_num(4)));
 

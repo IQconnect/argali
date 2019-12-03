@@ -1,0 +1,23 @@
+.contact-icons {
+  list-style: none;
+  display: grid;
+  gap: gutter(2);
+  width: 100%;
+
+  @include media(md) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__elem {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__icon {
+    height: auto;
+    width: auto;
+    max-width: gutter(3);
+    margin-top: gutter(1);
+    margin-right: gutter(3);
+  }
+}

@@ -1,9 +1,27 @@
 .container {
-  max-width: calc(100% - 200px);
+  max-width: gutter(136);
   margin: 0 auto;
 
-  @media (max-width: 998px) {
-    max-width: 100%;
-    padding: 0 ($gutter * 3);
+  @include mediaTo(lg) {
+    max-width: gutter(90);
+    padding: 0;
+  }
+
+  @include mediaTo(xl) {
+    max-width: gutter(90);
+    padding: 0 gutter(3);
+  }
+
+  &--fluid {
+    max-width: calc(100% - #{gutter(8)});
+
+    @include mediaTo(lg) {
+      max-width: gutter(90);
+      padding: 0;
+    }
+
+    @include mediaTo(xl) {
+      padding: 0 gutter(3);
+    }
   }
 }

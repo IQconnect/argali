@@ -11,18 +11,16 @@
 <div class="person">
     <div class="person__header">
         <h3 class="person__title uppercase text light">
-            {{ $title }}
+            Dane kontaktowe
         </h3>
     </div>
-    {!! image($image, 'full', 'person__image') !!}
     <address class="person__info">
-        <h4 class="person__name subtitle light">
-            {{ $name }}
-        </h4>
         <p class="text light">
             tel. : <a href="tel:{{ str_replace(' ', '', $tel) }}">{{ $tel }}</a>
             <br>
             mail : <a href="mailto:{{ $mail }}">{{ $mail }}</a>
+            <br>
+            mail : <a href="mailto:sprzedaz@argali.com.pl ">sprzedaz@argali.com.pl </a>
         </p>
     </address>
 </div>

@@ -1,1 +1,40 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&subset=latin-ext");
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../font/MartinGotURWTOT-Med.eot");
+  src:
+    url("../font/MartinGotURWTOT-Med.eot?#iefix") format("embedded-opentype"),
+    url("../font/MartinGotURWTOT-Med.woff2") format("woff2"),
+    url("../font/MartinGotURWTOT-Med.woff") format("woff"),
+    url("../font/MartinGotURWTOT-Med.ttf") format("truetype"),
+    url("../font/MartinGotURWTOT-Med.svg#MartinGotURWTOT-Med") format("svg");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../font/MartinGotURWTOT-Lig.eot");
+  src:
+    url("../font/MartinGotURWTOT-Lig.eot?#iefix") format("embedded-opentype"),
+    url("../font/MartinGotURWTOT-Lig.woff2") format("woff2"),
+    url("../font/MartinGotURWTOT-Lig.woff") format("woff"),
+    url("../font/MartinGotURWTOT-Lig.ttf") format("truetype"),
+    url("../font/MartinGotURWTOT-Lig.svg#MartinGotURWTOT-Lig") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Martin Gothic";
+  src: url("../font/MartinGotURWTOT-Bol.eot");
+  src:
+    url("../font/MartinGotURWTOT-Bol.eot?#iefix") format("embedded-opentype"),
+    url("../font/MartinGotURWTOT-Bol.woff2") format("woff2"),
+    url("../font/MartinGotURWTOT-Bol.woff") format("woff"),
+    url("../font/MartinGotURWTOT-Bol.ttf") format("truetype"),
+    url("../font/MartinGotURWTOT-Bol.svg#MartinGotURWTOT-Bol") format("svg");
+  font-weight: 600;
+  font-style: normal;
+}

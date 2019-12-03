@@ -14,11 +14,14 @@ const rotator = {
         this.trigger = document.querySelectorAll(`[${TRIGGER}]`);
         this.elem = document.querySelectorAll(`[${ELEM}]`);
         this.image = document.querySelectorAll(`[${IMAGE}]`);
+        this.time = 5000;
         this.activ = 0;
         this.addClass = CLASS.ADD;
         this.holdClass = CLASS.HOLD;
         this.max = this.elem.length - 1;
         this.addEvents();
+        this.autoSlide();
+        this.setCurrent(0);
     },
 
     addEvents() {
@@ -41,6 +44,9 @@ const rotator = {
                 setTimeout(()=> {
                     $this.disabled = false;
                 }, 400)
+
+                clearInterval(this.interval);
+                this.autoSlide();
             })
         });
     },
@@ -90,6 +96,18 @@ const rotator = {
     holdController($i) {
          this.elem[$i].classList.add(this.holdClass);
          this.image[$i].classList.add(this.holdClass);
+    },
+
+    autoSlide() {
+        const intervalFunc = () => {
+            this.increment();
+            console.log('next');
+            this.setCurrent(this.activ);
+        }
+
+        if(this.image.length > 1) {
+            this.interval = setInterval(intervalFunc, this.time);
+        }
     },
 };
 

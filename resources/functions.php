@@ -321,3 +321,9 @@ function create_investitions() {
 }
 // Hooking up our function to theme setup
 add_action( 'init', 'create_investitions' );
+
+function my_acf_init() {
+	acf_update_setting('google_api_key', 'AIzaSyDB6amgRAZXs7H65TQeg1w61AIG8-Zn7fk');
+}
+
+add_action('acf/init', 'my_acf_init');

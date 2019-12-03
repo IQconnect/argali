@@ -1,30 +1,45 @@
 .form {
   $root: &;
 
-  @include cssLock("margin-top", 360, 1920, (gutter_num(-3), gutter_num(-4)));
-  @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(4)));
-  @include cssLock("padding-left", 360, 1920, (gutter_num(2), gutter_num(3)));
-  @include cssLock("padding-right", 360, 1920, (gutter_num(2), gutter_num(3)));
-
-  background: theme-color("light");
+  padding: gutter(4.8) gutter(3.2);
   position: relative;
-  box-shadow: 0 gutter(2) gutter(3) gutter(-2) rgba(theme-color(dark), 0.6);
+  max-width: gutter(116);
+  background-color: $greey;
+
+  @include mediaTo(md) {
+    height: 100vh;
+    overflow: auto;
+  }
 
   @media (max-width: map-get($media, lg)) {
     margin-top: 0;
   }
 
-  &__header {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
+  &__title {
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3.2), gutter_num(7.4)));
+
+    letter-spacing: 0.7px;
+    font-weight: $medium;
+    color: $special;
+    line-height: 1.5;
+
+    @include mediaTo(xl) {
+      margin-bottom: gutter(3.2);
+    }
+
+    @include mediaTo(md) {
+      padding-right: gutter(4.8);
+      font-size: 20px;
+    }
   }
 
   &__wrapper {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(4), gutter_num(8)));
+    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(2)));
 
     display: flex;
     flex-direction: column;
     grid-template-columns: 1fr;
-    grid-gap: gutter(4) gutter(4);
+    grid-gap: gutter(3.2) gutter(3.2);
 
     @include media(sm) {
       display: grid;
@@ -40,39 +55,46 @@
       margin-bottom: 0;
     }
 
-    &::after {
-      content: "";
-
-      @extend .absolute;
-
-      top: unset;
-      bottom: gutter(-1);
-      right: unset;
-      width: 100%;
-      height: 1px;
-      background-color: theme-color(special);
-
-      @include media(sm) {
-        width: gutter(2);
-      }
+    &--textarea {
+      grid-column: 2 span;
     }
 
-    &--textarea {
+    &:first-child {
       grid-column: 2 span;
     }
   }
 
+  &__label {
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: gutter(1);
+  }
+
   &__input {
+    @extend .text;
+
     font-family: map-get($font-family, main);
-    font-size: gutter(1.8);
-    letter-spacing: gutter(0.2);
-    border: 0;
-    outline: 0;
-    min-height: gutter(2);
-    max-width: 100%;
-    min-width: 100%;
+    background: $light;
     width: 100%;
-    box-shadow: inset 0 gutter(5) theme-color(light) !important;
+    height: gutter(6.8);
+    border: 0;
+    padding: 0 gutter(1.6);
+
+    @include mediaTo(xl) {
+      height: gutter(4.8);
+    }
+
+    &--textarea {
+      height: gutter(15) !important;
+
+      @include mediaTo(xl) {
+        height: gutter(13) !important;
+      }
+
+      @include mediaTo(lg) {
+        height: gutter(10) !important;
+      }
+    }
   }
 
   &__checkbox-wrapper {
@@ -91,10 +113,11 @@
     left: 0;
     top: gutter(0.65);
     display: inline-block;
-    width: gutter(3);
+    width: gutter(2.3);
     height: gutter(2.3);
-    border: 1px solid theme-color(special);
+    border: 1px solid $special-dark;
     transition: $transition;
+    background-color: $light;
 
     &::before,
     &::after {
@@ -130,22 +153,46 @@
   &__thankyou {
     @extend .absolute;
 
-    @include cssLock("padding", 360, 1920, (gutter_num(3), gutter_num(4)));
-    @include cssLock("padding-left", 360, 1920, (gutter_num(2), gutter_num(3)));
-    @include cssLock("padding-right", 360, 1920, (gutter_num(2), gutter_num(3)));
-
+    padding: gutter(4.8) gutter(3.2);
     top: unset;
-    height: calc(100% - #{gutter(10)});
-    background: theme-color(light);
+    height: 100%;
+    background-color: $greey;
     opacity: 0;
     pointer-events: none;
     transition: $transition;
+    text-transform: uppercase;
   }
 
   &.-was-send {
     #{$root}__thankyou {
       opacity: 1;
       pointer-events: initial;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: gutter(5.2);
+    right: gutter(3);
+    width: gutter(3);
+    height: gutter(3);
+    border: 0;
+    background: transparent;
+    z-index: 10;
+
+    &::before,
+    &::after {
+      @extend .absolute;
+
+      content: "";
+      width: gutter(3);
+      height: gutter(0.2);
+      background-color: color(special);
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
     }
   }
 }
