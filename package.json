@@ -81,7 +81,7 @@
   },
   "dependencies": {
     "@google/maps": "^1.0.1",
-    "bootstrap": "v4.2.1",
+    "bootstrap": "v4.3.1",
     "flickity": "^2.2.0",
     "flickity-as-nav-for": "^2.0.1",
     "image-map-resizer": "^1.0.10",
