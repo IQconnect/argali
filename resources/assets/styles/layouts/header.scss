@@ -11,6 +11,10 @@
   transition: $transition;
   padding: gutter(0.5) 0;
 
+  &.-is-static {
+    position: relative;
+  }
+
   &__wrapper {
     display: flex;
     justify-content: space-between;

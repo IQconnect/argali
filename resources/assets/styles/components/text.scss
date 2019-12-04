@@ -121,7 +121,7 @@
   @include cssLock("font-size", 360, 1920, (gutter_num(1), gutter_num(2)));
 
   font-family: map-get($font-family, main);
-  font-weight: $medium;
+  font-weight: $thin;
   line-height: 1.8;
 
   &--large {

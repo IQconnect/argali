@@ -6,23 +6,34 @@ $space: ($gutter_num * 2);
   padding: 0;
   list-style: none;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
-
-  @include media(sm) {
-    flex-direction: row;
-  }
+  text-transform: uppercase;
+  max-width: gutter(110);
+  margin: 0 auto;
 
   &__elem {
-    @include cssLock("padding", 360, 1920, ($space/2, $space));
-
     width: 100%;
+  }
 
-    @include media(sm) {
-      width: auto;
+  &__link {
+    @extend .menu-link;
+
+    padding: gutter(0.8);
+    text-align: center;
+    border: 1px solid $dark-greey;
+    transition: $transition;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.-is-active {
+      background: $special;
+      color: $light;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

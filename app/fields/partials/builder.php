@@ -21,5 +21,9 @@ $builder
             ->addLayout(get_field_partial('components.team'))
             ->addLayout(get_field_partial('components.img-icon'))
             ->addLayout(get_field_partial('components.slider'))
+            ->addLayout(get_field_partial('components.extra-menu'))
+            ->addLayout(get_field_partial('components.image-map'))
+            ->addLayout(get_field_partial('components.flat-table'))
+            ->addLayout(get_field_partial('components.columns'))
     ;
 return $builder;

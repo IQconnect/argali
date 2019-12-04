@@ -8,7 +8,7 @@
 * [x] RWD
     * [x] full H 1920
     * [x] 1440
-* [ ] Dodać submenu
+* [x] Dodać submenu
 
 <br>
 ## Inwestycja Zrealizowana
@@ -25,7 +25,21 @@
 <br>
 ## Kontakt
 
-* [ ] Sprawdzić która wersja
-* [ ] Zmodyfikować formularz kontaktowy 
+* [x] Sprawdzić która wersja
+* [ ] Zmodyfikować formularz kontaktowy
 * [ ] Usunąć działanie popupu kontaktowego
 * [ ] Usunąć przycisk napisz do nas
+
+<br>
+## Strona Inwestycji zrealizowanej
+
+* [x] submenu
+    * [ ] dodać działanie
+* [x] Mapa domów
+    * [ ] Informacje o domie po otwarciu
+* [x] Dostępne lokale
+* [x] Galeria zdjęć
+* [x] Opis inwestycji
+* [x] Lokalizacja
+* [x] Lokalizacja mapa
+* [x] Kontakt

@@ -1,5 +1,8 @@
 .extra-menu {
-  padding: ($gutter * 9) 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: $greey;
 
   & + section {
     padding-top: 0;

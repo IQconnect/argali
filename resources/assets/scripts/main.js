@@ -3,6 +3,7 @@ import 'jquery';
 import 'maphilight';
 import 'image-map-resizer';
 import 'tooltipster';
+import 'tablesorter';
 
 
 // Import everything from autoload
@@ -14,7 +15,7 @@ import common from './routes/common';
 import home from './routes/home';
 import aboutUs from './routes/about';
 
-import slider from './components/slider';
+//import slider from './components/slider';
 import sliderInvest from './components/slider-invest';
 import rotator from './components/rotator';
 import hamburger from './components/hamburger';
@@ -25,6 +26,7 @@ import gmap from './components/gmap';
 //import scroll from './components/scroll';
 import popupForm from './components/popup-form';
 import contentSlider from './components/content-slider';
+import imageMap from './components/image-map';
 
 
 /** Populate Router instance with DOM routes */
@@ -40,7 +42,7 @@ const routes = new Router({
 // Load Events
 jQuery(document).ready(() => {
   routes.loadEvents();
-  slider.init();
+  //slider.init();
   sliderInvest.init();
   rotator.init();
   hamburger.init();
@@ -51,14 +53,15 @@ jQuery(document).ready(() => {
   //scroll.init();
   popupForm.init();
   contentSlider.init();
+  ExtraMenu.init();
+  imageMap.init();
 });
 
 setTimeout(() => {
-  slider.resize();
+  //slider.resize();
   sliderInvest.resize();
   $('.map__image').maphilight();
   $('map').imageMapResize();
   $('.tooltip').tooltipster();
+  $('#myTable').tablesorter();
 }, 1000)
-
-

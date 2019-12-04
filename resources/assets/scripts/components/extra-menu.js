@@ -1,15 +1,25 @@
 const CONFIG = {
   ELEM: '[data-extra-menu]',
+  HEADER: '[header]',
 };
 
 const ExtraMenu = {
   init() {
-    const { ELEM } = CONFIG;
+    const { ELEM, HEADER } = CONFIG;
 
     this.$elem = document.querySelectorAll(ELEM);
-    this.$currentLocation = this.getLastPartOfLink();
+    this.$header = document.querySelector(HEADER);
 
-    this.checkCurrentPage();
+    if(this.$elem) {
+      this.$currentLocation = this.getLastPartOfLink();
+      
+      this.changeMainMenu();
+      // this.checkCurrentPage();
+    }
+  },
+
+  changeMainMenu() {
+    this.$header.classList.add('-is-static')
   },
 
   checkCurrentPage() {

@@ -1,0 +1,21 @@
+.image-map {
+  max-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: gutter(3.2);
+
+  .imp-tooltip.imp-tooltip-visible {
+    z-index: 1000;
+    text-align: center;
+  }
+
+  .imp-tooltip {
+    @extend .text;
+
+    width: auto !important;
+    font-weight: $thin;
+    letter-spacing: 1px;
+    pointer-events: none;
+  }
+}

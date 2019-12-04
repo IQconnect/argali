@@ -5,26 +5,37 @@ table {
   background-color: color("light");
 
   thead {
-    background-color: color("special-dark");
+    @extend .small-text;
+
+    background-color: $greey;
+    color: color("dark");
 
     @media (max-width: 767px) {
       display: none;
     }
 
     th {
-      @extend .text;
+      @extend .small-text;
 
-      padding: ($gutter * 4) 0;
+      padding: ($gutter * 1.6) 0;
       text-transform: uppercase;
-      color: color("light");
       font-weight: 400;
+      border: 1px solid $dark-greey;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background-color: $special-dark;
+        color: $light;
+      }
     }
   }
 
   tbody {
-    @extend .text;
+    @extend .small-text;
 
     font-weight: 300;
+    text-transform: uppercase;
 
     tr {
       background-color: lighten(color("special-dark"), 60%);
@@ -42,6 +53,7 @@ table {
     td {
       padding: ($gutter * 2) 0;
       text-align: center;
+      border: 1px solid $dark-greey;
 
       span {
         padding: $gutter;
@@ -49,21 +61,22 @@ table {
         display: inline-block;
         text-transform: uppercase;
         color: color(dark);
+        font-weight: $bold;
 
         @include media(sm) {
           color: color("light");
 
-          &.free {
+          &.wolne {
             background: color("free");
             letter-spacing: 2px;
           }
 
-          &.taken {
+          &.zajęte {
             background: color("taken");
             color: color("dark");
           }
 
-          &.sold {
+          &.sprzedane {
             background: color("sold");
           }
         }
@@ -81,37 +94,43 @@ table {
 
       &:nth-child(1) {
         &::before {
-          content: "Nr:   ";
+          content: "Budynek:   ";
         }
       }
 
       &:nth-child(2) {
         &::before {
-          content: "Powierzchnia:   ";
+          content: "Nr:   ";
         }
       }
 
       &:nth-child(3) {
         &::before {
-          content: "Balkon / Taras:   ";
+          content: "Powierzchnia:   ";
         }
       }
 
       &:nth-child(4) {
         &::before {
-          content: "Piętro:   ";
+          content: "Ogórdek:   ";
         }
       }
 
       &:nth-child(5) {
         &::before {
-          content: "Status:   ";
+          content: "Rzut:   ";
         }
       }
 
-      &:nth-child(6) {
+      &:nth-child(7) {
         &::before {
-          content: "Cena:   ";
+          content: "Karta:   ";
+        }
+      }
+
+      &:nth-child(8) {
+        &::before {
+          content: "Status:   ";
         }
       }
     }
@@ -129,10 +148,39 @@ table {
     align-items: center;
   }
 
+  .table-pdf {
+    height: gutter(3);
+    width: auto;
+  }
+
+  .table-link {
+    transition: $transition;
+
+    &:hover {
+      color: $special;
+    }
+  }
+
   .table__plan {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
   }
+}
+
+.table-section {
+  padding-top: gutter(5);
+}
+
+.table__title {
+  @extend .large-text;
+
+  text-transform: uppercase;
+  color: color("special");
+  margin-bottom: gutter(5);
+  font-weight: $thin;
+  letter-spacing: 2.4px;
+  margin-top: 0;
+  text-align: center;
 }
