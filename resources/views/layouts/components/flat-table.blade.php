@@ -1,5 +1,6 @@
 @php
   $flats = $data['table'];
+  $gallery = $data['gallery'];
 @endphp
 
 <section class="section table-section">
@@ -82,7 +83,7 @@
           </td>
         </tr>
         @endif
-        
+
         @endforeach
       </tbody>
     </table>
@@ -93,3 +94,8 @@
     @endif
   </div>
 </section>
+
+@foreach ($flats as $item)
+  @include('blocks.popup-flat', ['data'=>$item, 'gallery'=>$gallery])
+@endforeach
+

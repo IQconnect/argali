@@ -3,7 +3,7 @@
 @endphp
 
 @if($gallery)
-<section class="gallery">
+<section class="gallery" id="galeria" data-single-section="galeria">
     <div class="container">
         <div class="gallery__wrapper">
             @foreach ($gallery as $img)

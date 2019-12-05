@@ -1,12 +1,17 @@
 const CONFIG = {
     ELEM: '.imp-shape',
+    CLOSE: 'data-close-popup',
+    POPUP: 'data-popup-flat',
 }
 
-const { ELEM } = CONFIG;
+const { ELEM, CLOSE, POPUP } = CONFIG;
 
 const imageMap = {
     init() {
         this.elem = document.querySelectorAll(ELEM);
+        this.close = document.querySelectorAll(`[${CLOSE}]`);
+        this.popups = document.querySelectorAll(`[${POPUP}]`);
+        this.class = '-is-active';
         console.log('Image map init');
 
         const interval = setInterval(() => {
@@ -26,9 +31,21 @@ const imageMap = {
             console.log('elem interval');
             element.addEventListener('click', (e) => {
                 e.preventDefault();
-                console.log('click');
+
+                const $this = e.currentTarget;
+                console.log('click', $this.dataset.shapeTitle);
+                document.querySelector(`[data-popup-flat="${$this.dataset.shapeTitle}"]`).classList.add(this.class);
             });
         });
+
+        this.close.forEach(element => {
+          console.log('close elem');
+          element.addEventListener('click', (e) => {
+              e.preventDefault();
+              console.log('click');
+              this.popups.forEach((elem) => { elem.classList.remove(this.class) })
+          });
+      });
     },
 }
 

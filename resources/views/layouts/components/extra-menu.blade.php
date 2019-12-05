@@ -3,7 +3,7 @@
 @endphp
 
 @if ($menu)
-<nav class="extra-menu" data-extra-menu>
+<nav class="extra-menu">
   <div class="container">
     <ul class="extra-menu__list list">
       @foreach ($menu as $item)

@@ -3,7 +3,7 @@
     $right = $data['right'];
 @endphp
 
-<section class="columns section" id="opis">
+<section class="columns section" id="opis" data-single-section="opis">
     <div class="container">
         <div class="columns__wrapper">
             <div class="columns__cell">

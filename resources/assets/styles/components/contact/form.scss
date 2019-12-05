@@ -15,8 +15,47 @@
     margin-top: 0;
   }
 
+  &--flat {
+    padding-top: gutter(3.2);
+    padding-bottom: gutter(1.6);
+
+    #{$root}__wrapper {
+      gap: gutter(0.8);
+    }
+
+    #{$root}__title {
+      margin-bottom: gutter(2.4);
+    }
+
+    #{$root}__label {
+      @extend .small-text;
+
+      margin-bottom: gutter(0.8);
+    }
+
+    #{$root}__input {
+      @extend .small-text;
+
+      height: gutter(4);
+      padding: gutter(1.6);
+
+      &--textarea {
+        height: gutter(10) !important;
+      }
+    }
+
+    #{$root}__checkbox-wrapper {
+      font-size: gutter(1.2);
+    }
+  }
+
   &__title {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(3.2), gutter_num(7.4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(3.2), gutter_num(7.4))
+    );
 
     letter-spacing: 0.7px;
     font-weight: $medium;
@@ -34,7 +73,12 @@
   }
 
   &__wrapper {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(2)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(2))
+    );
 
     display: flex;
     flex-direction: column;
@@ -98,7 +142,12 @@
   }
 
   &__checkbox-wrapper {
-    @include cssLock("margin-bottom", 360, 1920, (gutter_num(2), gutter_num(4)));
+    @include cssLock(
+      "margin-bottom",
+      360,
+      1920,
+      (gutter_num(2), gutter_num(4))
+    );
 
     position: relative;
     color: lighten(theme-color(dark), 50%);

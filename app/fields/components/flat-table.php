@@ -7,6 +7,7 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 $flatTable = new FieldsBuilder('flat-table');
 
 $flatTable
+    ->addGallery('gallery')
     ->addRepeater('table', ['label'=>'Dodatkowe menu'])
         ->addText('budynek')
         ->addText('nr')
@@ -19,5 +20,6 @@ $flatTable
             ->addChoice('zajęte')
             ->addChoice('sprzedane')
             ->setDefaultValue('wolne')
+        ->addImage('extraRzut')
     ;
 return $flatTable;
