@@ -3,7 +3,7 @@
 
   padding: gutter(4.8) gutter(3.2);
   position: relative;
-  max-width: gutter(116);
+  max-width: gutter(141.9);
   background-color: $greey;
 
   @include mediaTo(md) {
@@ -106,6 +106,16 @@
     &:first-child {
       grid-column: 2 span;
     }
+
+    &--contact-form {
+      &:first-child {
+        grid-column: 1;
+      }
+    }
+
+    &--nolabel {
+      margin-top: gutter(3);
+    }
   }
 
   &__label {
@@ -139,6 +149,15 @@
         height: gutter(10) !important;
       }
     }
+  }
+
+  &__button-wrapper {
+    text-align: center;
+  }
+
+  &__checkbox-group {
+    display: flex;
+    max-width: gutter(30);
   }
 
   &__checkbox-wrapper {

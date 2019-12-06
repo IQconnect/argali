@@ -20,7 +20,6 @@
       </div>
   </div>
   </section>
-
   @include('layouts.components.contact')
 
 @endsection
