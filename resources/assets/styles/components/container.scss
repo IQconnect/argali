@@ -8,19 +8,21 @@
   }
 
   @include mediaTo(xl) {
-    max-width: gutter(90);
+    max-width: gutter(120);
     padding: 0 gutter(3);
   }
 
   &--fluid {
     max-width: calc(100% - #{gutter(8)});
+    width: 100%;
 
     @include mediaTo(lg) {
-      max-width: gutter(90);
+      max-width: calc(100% - #{gutter(6)});
       padding: 0;
     }
 
     @include mediaTo(xl) {
+      max-width: gutter(120);
       padding: 0 gutter(3);
     }
   }

@@ -122,6 +122,13 @@
     text-transform: uppercase;
     display: block;
     margin-bottom: gutter(1);
+
+    &--select {
+      @extend .small-text;
+
+      color: $dark !important;
+      padding-top: gutter(0.6);
+    }
   }
 
   &__input {

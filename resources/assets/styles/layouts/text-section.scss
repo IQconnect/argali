@@ -17,6 +17,22 @@
 
       font-weight: $thin;
       line-height: 1.8;
+      margin: 0 auto;
+
+      @include mediaTo(xl) {
+        font-size: 20px;
+        max-width: gutter(90);
+      }
+
+      @include mediaTo(md) {
+        font-size: 18px;
+      }
+
+      @include mediaTo(sm) {
+        br {
+          display: none;
+        }
+      }
     }
   }
 }

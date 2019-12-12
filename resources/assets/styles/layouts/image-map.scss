@@ -5,17 +5,40 @@
   align-items: center;
   margin-top: gutter(3.2);
 
+  @include mediaTo(xl) {
+    max-height: 70vh;
+  }
+
+  .container {
+    @include mediaTo(xl) {
+      max-width: 140vh;
+    }
+  }
+
   .imp-tooltip.imp-tooltip-visible {
     z-index: 1000;
     text-align: center;
   }
 
   .imp-tooltip {
-    @extend .text;
+    @extend .small-text;
 
     width: auto !important;
     font-weight: $thin;
     letter-spacing: 1px;
     pointer-events: none;
+    background: $light !important;
+    color: $dark !important;
+    padding: gutter(1.5) !important;
+
+    .hs-arrow-bottom {
+      border-top-color: $light !important;
+    }
+  }
+
+  .imp-tooltip-plain-text {
+    color: $dark !important;
+    text-align: center;
+    font-weight: $bold;
   }
 }

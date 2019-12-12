@@ -22,12 +22,12 @@
         <div class="form__input-wrapper form__input-wrapper--nolabel form__input-wrapper--contact-form">
             <label class="form__label"> Preferowany roadzaj kontaktu</label>
             <div class="form__checkbox-group">
-                <label class="form__checkbox-wrapper small-text" for="emailcheck">
+                <label class="form__checkbox-wrapper form__label form__label--select" for="emailcheck">
                     <input type="checkbox" name="emailcheck" id="emailcheck" class="form__checkbox">
                     <span class="form__checkbox-trigger"></span>
                     E-MAIL
                 </label>
-                <label class="form__checkbox-wrapper small-text" for="phonecheck">
+                <label class="form__checkbox-wrapper form__label form__label--select" for="phonecheck">
                     <input type="checkbox" name="phonecheck" id="phonecheck" class="form__checkbox">
                     <span class="form__checkbox-trigger"></span>
                     TELEFON

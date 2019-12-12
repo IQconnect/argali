@@ -60,3 +60,11 @@ p {
 button {
   cursor: pointer;
 }
+
+.kontakt {
+  .contact-section {
+    .button {
+      display: none;
+    }
+  }
+}

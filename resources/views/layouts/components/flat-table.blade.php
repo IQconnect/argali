@@ -74,7 +74,7 @@
             @endif
           </td>
           <td>
-            <a class="table-link" href="./?message=Jestem zainteresowany mieszkaniem nr {{ $flat['nr'] }} w budynku {{ $flat['budynek']}} w inwestycji {{ the_title() }}">Wyślij</a>
+            <a class="table-link imp-shape-extra" data-shape-title="{{ $flat['nr'] or 'X' }}"  href="./?message=Jestem zainteresowany mieszkaniem nr {{ $flat['nr'] }} w budynku {{ $flat['budynek']}} w inwestycji {{ the_title() }}">Wyślij</a>
           </td>
           <td>
             <span class="{{$flat['status']}}">

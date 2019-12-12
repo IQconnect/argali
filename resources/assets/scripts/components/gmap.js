@@ -26,13 +26,33 @@ const Gmap = {
         loadGoogleMapsApi(
             { 'key': 'AIzaSyDB6amgRAZXs7H65TQeg1w61AIG8-Zn7fk', }
         ).then(function (googleMaps) {
-            const map = new googleMaps.Map(elem, {
-                center: {
-                    lat: pins[0]['pin']['lat'],
-                    lng: pins[0]['pin']['lng'],
-                },
-                zoom: 10,
-            });
+
+            let map;
+            if(pins[1]) {
+                map = new googleMaps.Map(elem, {
+                    center: {
+                        // lat: pins[0]['pin']['lat'],
+                        // lng: pins[0]['pin']['lng'],
+                        lat: 52.2259526,
+                        lng: 21.0123483,
+                    },
+                    zoom: 11.5,
+                    keyboardShortcuts: false
+                });
+            }
+
+            else {
+                map = new googleMaps.Map(elem, {
+                    center: {
+                        lat: pins[0]['pin']['lat'],
+                        lng: pins[0]['pin']['lng'],
+                        // lat: 52.2259526,
+                        // lng: 21.0123483,
+                    },
+                    zoom: 11.5,
+                    keyboardShortcuts: false
+                });
+            }
 
             pins.forEach(element => {
                 const infoWindow = new google.maps.InfoWindow({

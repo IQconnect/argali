@@ -62,7 +62,7 @@ $option_page
                 ->addFields(get_field_partial('components.text-info'))
             ->addTab('Formularz')
                 ->addText('title', ['label' => 'Tytuł', 'default_value' => 'Formularz kontaktowy'])
-                ->addText('name', ['label' => 'Placeholder Nazwa', 'default_value' => 'Imię i nazwsiko'])
+                ->addText('name', ['label' => 'Placeholder Nazwa', 'default_value' => 'Imię i nazwisko'])
                 ->addText('topic', ['label' => 'Placeholder Temat', 'default_value' => 'Temat'])
                 ->addText('email', ['label' => 'Placeholder Adres e-mail', 'default_value' => 'Adres e-mail'])
                 ->addText('phone', ['label' => 'Placeholder Telefon', 'default_value' => 'Telefon'])

@@ -19,7 +19,7 @@ const ExtraMenu = {
 
     this.class = CLASS;
 
-    if(this.$elem) {
+    if(this.$elem.length) {
       this.$currentLocation = this.getLastPartOfLink();
 
       this.addEvent();

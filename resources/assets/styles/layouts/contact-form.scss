@@ -2,4 +2,51 @@
   background-color: $greey;
   display: flex;
   justify-content: center;
+  padding-top: gutter(10);
+  padding-left: gutter(1.2);
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+
+    @include mediaTo(xl) {
+      grid-template-columns: 1fr gutter(70);
+    }
+
+    @include mediaTo(md) {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+
+      .form {
+        height: auto !important;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+
+    &__wrapper {
+      padding: 0;
+      width: 100% !important;
+
+      &:last-child {
+        margin-top: gutter(2);
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .form__button-wrapper {
+    text-align: left;
+  }
 }

@@ -1,14 +1,16 @@
 const CONFIG = {
     ELEM: '.imp-shape',
+    ELEMEXTRA: '.imp-shape-extra',
     CLOSE: 'data-close-popup',
     POPUP: 'data-popup-flat',
 }
 
-const { ELEM, CLOSE, POPUP } = CONFIG;
+const { ELEM, ELEMEXTRA, CLOSE, POPUP } = CONFIG;
 
 const imageMap = {
     init() {
         this.elem = document.querySelectorAll(ELEM);
+        this.elemExtra = document.querySelectorAll(ELEMEXTRA);
         this.close = document.querySelectorAll(`[${CLOSE}]`);
         this.popups = document.querySelectorAll(`[${POPUP}]`);
         this.class = '-is-active';
@@ -28,6 +30,17 @@ const imageMap = {
 
     addEvent() {
         this.elem.forEach(element => {
+            console.log('elem interval');
+            element.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                const $this = e.currentTarget;
+                console.log('click', $this.dataset.shapeTitle);
+                document.querySelector(`[data-popup-flat="${$this.dataset.shapeTitle}"]`).classList.add(this.class);
+            });
+        });
+
+        this.elemExtra.forEach(element => {
             console.log('elem interval');
             element.addEventListener('click', (e) => {
                 e.preventDefault();
