@@ -89,6 +89,10 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
     }
+
+    @include mediaTo(xl) {
+      gap: gutter(2) gutter(3.2);
+    }
   }
 
   &__input-wrapper {
@@ -146,14 +150,14 @@
     }
 
     &--textarea {
-      height: gutter(15) !important;
+      height: gutter(13) !important;
 
       @include mediaTo(xl) {
-        height: gutter(13) !important;
+        height: gutter(10) !important;
       }
 
       @include mediaTo(lg) {
-        height: gutter(10) !important;
+        height: gutter(8) !important;
       }
     }
   }
@@ -181,6 +185,7 @@
     width: 100%;
     padding-left: gutter(4);
     cursor: pointer;
+    line-height: 1.3;
   }
 
   &__checkbox-trigger {
@@ -190,7 +195,7 @@
     display: inline-block;
     width: gutter(2.3);
     height: gutter(2.3);
-    border: 1px solid $special-dark;
+    border: 1px solid transparent;
     transition: $transition;
     background-color: $light;
 

@@ -5,6 +5,10 @@
   padding-top: gutter(10);
   padding-left: gutter(1.2);
 
+  @include mediaTo(xl) {
+    padding-top: gutter(8);
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -31,6 +35,10 @@
     display: flex;
     flex-direction: column;
     padding-top: 48px;
+
+    h2 {
+      margin-bottom: gutter(1.6);
+    }
 
     &__wrapper {
       padding: 0;

@@ -20,7 +20,7 @@
             <input class="form__input" name="email" id="email" type="email" required>
         </div>
         <div class="form__input-wrapper form__input-wrapper--nolabel form__input-wrapper--contact-form">
-            <label class="form__label"> Preferowany roadzaj kontaktu</label>
+            <label class="form__label"> Preferowany rodzaj kontaktu</label>
             <div class="form__checkbox-group">
                 <label class="form__checkbox-wrapper form__label form__label--select" for="emailcheck">
                     <input type="checkbox" name="emailcheck" id="emailcheck" class="form__checkbox">

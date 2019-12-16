@@ -1,5 +1,6 @@
 @php
     $contact = option('contact');
+    $customId = rand(1, 300);
 @endphp
 
 <form action="./" method="POST" class="form form--flat" validation data-form>
@@ -26,8 +27,8 @@
           <textarea class="form__input form__input--textarea" name="message" id="message" rows="1" data-textarea></textarea>
       </div>
   </div>
-  <label class="form__checkbox-wrapper small-text" for="terms">
-      <input type="checkbox" name="terms" id="terms" class="form__checkbox" required>
+  <label class="form__checkbox-wrapper small-text" for="terms{{$customId}}">
+      <input type="checkbox" name="terms" id="terms{{$customId}}" class="form__checkbox" required>
       <span class="form__checkbox-trigger"></span>
       {!! $contact['terms'] !!}
   </label>
