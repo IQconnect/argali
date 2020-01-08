@@ -34,8 +34,11 @@
               OGRÓD: {{ $data['ogrodek'] }} m²
             </p>
           </div>
+          @php
+              $flatMessage = 'DOM '. $data['nr'] .' Budynek '.$data['budynek']. ' '.get_the_title();
+          @endphp
           <div class="popup-flat__form">
-            @include('blocks.form-flat')
+            @include('blocks.form-flat', ['flatMessage'=>$flatMessage, 'flatNr'=>$data['nr'], 'inwestycja'=>get_the_title()])
           </div>
       </div>
     </div>

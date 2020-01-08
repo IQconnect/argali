@@ -2,7 +2,7 @@
     $contact = option('contact');
 @endphp
 
-<form action="./" method="POST" class="form" validation data-form>
+<form action="http://argali.com.pl/argali/mail.php" method="POST" class="form" validation data-form>
     {{-- <h3 class="form__title uppercase text light">
         {{ $contact['title'] }}
     </h3> --}}

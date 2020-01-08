@@ -58,7 +58,7 @@
           <td>
             @if( $flat['rzut'] )
             <a href="{{ $flat['rzut']['url'] }}" data-fancybox="rzut{{ $flat['nr'] }}">
-                <img src="{{ $flat['rzut']['url'] }}" alt="Plan mieszkania {{ $flat['nr'] }}">
+                <img src="{{ $flat['rzut']['sizes']['medium'] }}" alt="Plan mieszkania {{ $flat['nr'] }}">
             </a>
             @else
             X

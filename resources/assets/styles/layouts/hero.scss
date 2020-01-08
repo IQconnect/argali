@@ -53,6 +53,8 @@
     flex-direction: column;
     flex-wrap: nowrap;
     transition: $transition;
+    width: 100%;
+    text-align: center;
 
     @include mediaTo(md) {
       padding: 0 gutter(3);

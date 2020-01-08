@@ -2,6 +2,10 @@
 <html {!! get_language_attributes() !!}>
   @include('partials.head')
   <body @php body_class() @endphp style="overflow-x: hidden">
+    <!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N7T8LV7"
+			height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
     <div class="preloader" preloader ></div>
     @php do_action('get_header') @endphp
     @include('partials.header')
@@ -23,3 +27,4 @@
     @php wp_footer() @endphp
   </body>
 </html>
+		

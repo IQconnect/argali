@@ -2,13 +2,13 @@
     $contact = option('contact');
 @endphp
 
-<form action="./" method="POST" class="form" validation data-form>
+<form action="http://argali.com.pl/argali/mail.php" method="POST" class="form" validation data-form>
     <h3 class="form__title uppercase subtitle">
       {!! $contact['title'] !!}
     </h3>
-    <button class="form__close" data-toggle-form>
+    <div class="form__close" data-toggle-form>
 
-    </button>
+    </div>
     <div class="form__wrapper">
         <div class="form__input-wrapper">
             <label class="form__label" for="name">

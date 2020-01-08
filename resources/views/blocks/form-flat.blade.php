@@ -32,6 +32,9 @@
       <span class="form__checkbox-trigger"></span>
       {!! $contact['terms'] !!}
   </label>
+    <input type="hidden" name="flat" value="{{ $flatMessage }}">
+    <input type="hidden" name="flat_nr" value="{{ $flatNr }}">
+    <input type="hidden" name="inwestycja" value="{{ $inwestycja }}">
   <button class="form__button button">
       {{ $contact['button'] }}
   </button>
