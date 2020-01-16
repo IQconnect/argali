@@ -42,4 +42,8 @@
       grid-template-columns: 1fr 1fr;
     }
   }
+
+  &__text {
+    margin-bottom: gutter(2.4) !important;
+  }
 }

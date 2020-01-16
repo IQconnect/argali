@@ -69,9 +69,10 @@ const ExtraMenu = {
 
             const name = $this.getAttribute('href');
             let offset = $(`${name}`).offset().top;
+            let extraOffset = name == '#opis' ? 0 : 100;
 
             $('html, body').animate({
-                scrollTop: offset - 100,
+                scrollTop: offset - extraOffset,
             }, 800);
 
             setTimeout(()=> {

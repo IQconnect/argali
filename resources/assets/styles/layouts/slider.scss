@@ -40,6 +40,19 @@
   &__image {
     @extend .absolute;
     @extend .image;
+
+    &.-vertical {
+      max-width: 600px;
+      width: 40vw;
+      height: 100%;
+      object-fit: cover;
+      left: unset;
+
+      @include mediaTo(sm) {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
 
   &__content {

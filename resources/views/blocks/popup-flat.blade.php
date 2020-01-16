@@ -5,18 +5,23 @@
 
       </button>
       <div class="popup-flat__cell">
-        <div class="popup-flat__gallery">
+        <div class="popup-flat__gallery @if (!$gallery) popup-flat__gallery--single  @endif">
             <a href="{{ $data['rzut']['url'] }}" data-fancybox="flat-gallery{{ $data['nr'] }}" class="popup-flat__image">
               {!! image($data['rzut']['id'], 'full', 'popup-flat__s-image') !!}
             </a>
-          @foreach ($gallery as $item)
-            <a href="{{ $item['url'] }}" data-fancybox="flat-gallery{{ $data['nr'] }}" class="popup-flat__image">
-              {!! image($item['id'], 'full', 'popup-flat__s-image') !!}
-            </a>
-          @endforeach
+            @if ($gallery)
+            @foreach ($gallery as $item)
+              <a href="{{ $item['url'] }}" data-fancybox="flat-gallery{{ $data['nr'] }}" class="popup-flat__image">
+                {!! image($item['id'], 'full', 'popup-flat__s-image') !!}
+              </a>
+            @endforeach
+            @endif
         </div>
         <div class="popup-flat__cart">
-          {!! image($data['extraRzut']['id'], 'full', 'popup-flat__cart-img') !!}
+          <a href="{{ $data['extraRzut']['url'] }}" data-fancybox="rzut-extra-rzut-{{ $data['nr'] }}">
+            {!! image($data['extraRzut']['id'], 'full', 'popup-flat__cart-img') !!}
+          </a>
+          
           <a class="popup-flat__karta" href="{{ $data['karta']['url'] }}" data-fancybox="rzut-flat-{{ $data['nr'] }}">
             Karta Domu
             <img src="@asset('images/icons/icon-pdf.png')" class="table-pdf" alt="Karta mieszkania {{ $flat['nr'] }}">

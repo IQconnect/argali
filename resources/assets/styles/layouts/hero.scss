@@ -45,6 +45,7 @@
     bottom: 0;
     left: 0;
     padding-left: 0;
+    padding-top: gutter(10);
     opacity: 0;
     pointer-events: none;
     display: flex;
@@ -118,6 +119,7 @@
     justify-content: flex-end;
     position: absolute;
     bottom: 0;
+    z-index: 100;
   }
 
   &--small {

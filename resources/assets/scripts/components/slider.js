@@ -19,6 +19,7 @@ const Slider = {
         const { CELL } = CONFIG;
 
         this.elem.forEach(element => {
+            console.log(element);
             this.slider = new Flickity(element, {
                 pageDots: false,
                 prevNextButtons: false,

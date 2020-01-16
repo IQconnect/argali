@@ -25,5 +25,6 @@ $builder
             ->addLayout(get_field_partial('components.image-map'))
             ->addLayout(get_field_partial('components.flat-table'))
             ->addLayout(get_field_partial('components.columns'))
+            ->addLayout(get_field_partial('components.diary'))
     ;
 return $builder;

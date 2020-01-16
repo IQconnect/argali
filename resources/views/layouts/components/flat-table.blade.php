@@ -1,18 +1,21 @@
 @php
   $flats = $data['table'];
   $gallery = $data['gallery'];
+  $page_id = get_queried_object_id();
 @endphp
 
 <section class="section table-section">
   <div class="container">
     <h2 class="table__title">DOSTĘPNE LOKALE</h2>
     @if($flats)
-    <table class="table" id="myTable">
+      <table class="table" id="myTable">
       <thead>
         <tr>
+          @if($page_id != 450)
           <th>
             Budynek
           </th>
+          @endif
           <th>
             Nr domu
           </th>
@@ -37,15 +40,17 @@
         </tr>
       </thead>
 
-      <tbody>
+      <tbody data-id-page="{{ $page_id }}">
         @foreach ($flats as $flat)
         @php
         @endphp
         @if ($flat['status'] == 'wolne')
         <tr>
+          @if($page_id != 450)
           <td>
             {{ $flat['budynek'] or 'X' }}
           </td>
+          @endif
           <td>
             {{ $flat['nr'] or 'X' }}
           </td>

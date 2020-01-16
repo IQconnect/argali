@@ -1,5 +1,6 @@
 @php
   $flats = get_field('flats_info');
+  $page_id = get_queried_object_id();
 @endphp
 
 <section class="section">
@@ -39,9 +40,11 @@
         @endphp
         @if ($flat['status'] == 'free')
         <tr>
+          @if($page_id != 450)
           <td>
             {{ $flat['name'] != '' ? $flat['name'] : 'X' }}
           </td>
+          @endif
           <td>
             {{ $flat['area'] != '' ? $flat['area'] : 'X' }}
           </td>
