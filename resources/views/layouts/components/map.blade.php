@@ -13,6 +13,6 @@
   $pinsJSON = json_encode($pinsArray);
 @endphp
 
-<section class="section" id="lokalizacja" data-single-section="lokalizacja">
+<section class="section" id="lokalizacja" data-single-section="lokalizacja" data-aos="flip-down">
   <div class="google-map" id="google-map" google-map data-pins="{{ $pinsJSON }}"></div>
 </section>

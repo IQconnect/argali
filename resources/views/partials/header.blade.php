@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col header__wrapper">
         <a class="header__brand" href="{{ home_url('/') }}">
-          <img src="{{  get_field('logo', 'options')['url'] }}" alt="Apartamenty Juno">
+          <img src="{{  get_field('logo', 'options')['url'] }}" alt="Argali Development">
         </a>
         <button class="header__hamburger hamburger" data-toggle-menu>
           <span class="hamburger__line"></span>
