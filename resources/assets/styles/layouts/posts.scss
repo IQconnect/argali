@@ -1,4 +1,18 @@
 .posts {
+  @include cssLock("padding", 360, 1920, (gutter_num(5), gutter_num(8.5)));
+
+  padding-left: 0;
+  padding-right: 0;
+
+  &__header {
+    margin: gutter(2) 0 gutter(3);
+    background-color: $dark-greey;
+    color: $dark;
+    text-align: center;
+    text-transform: uppercase;
+    padding: gutter(3) 0;
+  }
+
   &__list {
     list-style: none;
     padding: 0;
@@ -13,29 +27,24 @@
   }
 
   &__elem {
-    @extend .overlay;
-
     display: block;
     position: relative;
-    padding-top: 60%;
     z-index: 10;
     color: color(light);
-
-    &::before {
-      transition: $transition;
-    }
+    transition: $transition;
 
     &:hover {
-      &::before {
-        background-color: rgba(color("dark"), 0.8);
-      }
+      opacity: 0.8;
     }
   }
 
   &__title {
-    position: absolute;
-    left: gutter(2);
-    bottom: gutter(6);
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: gutter(3);
+    text-transform: uppercase;
+    color: $special-dark;
   }
 
   &__label {
@@ -43,6 +52,13 @@
     left: gutter(2);
     bottom: gutter(2);
     text-transform: uppercase;
+  }
+
+  &__image-wrapper {
+    display: block;
+    position: relative;
+    padding-top: 60%;
+    width: 100%;
   }
 
   &__image {

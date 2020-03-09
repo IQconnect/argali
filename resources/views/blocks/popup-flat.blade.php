@@ -1,4 +1,5 @@
-<section class="popup-flat" data-popup-flat="{{ $data['nr'] }}">
+@if($data['status'] == 'wolne')
+<section class="popup-flat" data-popup-flat="{{ $data['nr'] }}" data-staus="{{ $data['status'] }}" @if($data['status'] != 'wolne') hidden @endif>
   <div class="container">
     <div class="popup-flat__wrapper">
       <button class="form__close popup-flat__close" data-close-popup="{{ $data['nr'] }}">
@@ -31,7 +32,7 @@
       <div class="popup-flat__cell">
           <div class="popup-flat__header">
             <h2 class="popup-flat__title">
-              DOM {{ $data['nr'] }} Budynek {{ $data['budynek'] }}
+              DOM {{ $data['nr'] }} @if($data['budynek'] != '') Budynek {{ $data['budynek'] }} @endif
             </h2>
             <p class="popup-flat__content">
               POWIERZCHNIA UŻYTKOWA: {{ $data['powierzchnia'] }} m²
@@ -40,7 +41,13 @@
             </p>
           </div>
           @php
+            if($data['budynek']) {
               $flatMessage = 'DOM '. $data['nr'] .' Budynek '.$data['budynek']. ' '.get_the_title();
+            }
+            
+            else {
+              $flatMessage = 'DOM '. $data['nr'] . ' ' .get_the_title();
+            }
           @endphp
           <div class="popup-flat__form">
             @include('blocks.form-flat', ['flatMessage'=>$flatMessage, 'flatNr'=>$data['nr'], 'inwestycja'=>get_the_title()])
@@ -49,3 +56,4 @@
     </div>
   </div>
 </section>
+@endif

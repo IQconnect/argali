@@ -113,6 +113,16 @@
     object-fit: contain;
     object-position: 0 50px;
 
+    @include mediaTo(xl) {
+      object-position: 0 10px;
+      width: calc(100% - 5vw);
+    }
+
+    @include mediaTo(lg) {
+      object-position: 0 10px;
+      width: 100%;
+    }
+
     @include mediaTo(md) {
       width: 100%;
       margin-bottom: gutter(3.2);

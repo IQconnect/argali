@@ -323,7 +323,7 @@ function create_investitions() {
 add_action( 'init', 'create_investitions' );
 
 function my_acf_init() {
-	acf_update_setting('google_api_key', 'AIzaSyDB6amgRAZXs7H65TQeg1w61AIG8-Zn7fk');
+	acf_update_setting('google_api_key', 'AIzaSyDqX_hqXzx0uZS2NcENrA2fkutTyXOHpMo');
 }
 
 add_action('acf/init', 'my_acf_init');

@@ -32,6 +32,11 @@ $space: ($gutter_num * 2);
       color: $light;
     }
 
+    &--title {
+      background: transparent !important;
+      color: inherit !important;
+    }
+
     &:hover {
       opacity: 0.8;
     }

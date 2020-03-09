@@ -12,6 +12,12 @@
   }
 
   li {
+    &:first-child {
+      @include mediaTo(xl) {
+        margin-right: gutter(1);
+      }
+    }
+
     &:last-child {
       margin-right: 0;
 
@@ -64,7 +70,7 @@
     }
 
     @include mediaTo(xl) {
-      margin: 0 gutter(0.8);
+      margin: 0 gutter(1);
     }
   }
 }

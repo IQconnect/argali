@@ -23,7 +23,7 @@ $option_page
             ->addText('link', ['title' => 'link'])
         ->endRepeater()
     ->addTab('hero', ['label' => 'Hero', 'placement' => 'left'])
-        ->addRelationship('hero', ['label'=> 'Osoba kontakowa', 'post_type'=>'inwestycje', 'min'=> 1])
+        ->addRelationship('hero', ['label'=> 'Inwestycje', 'post_type'=>'inwestycje', 'min'=> 1])
     ->addTab('info-section', ['label' => 'Sekcja informacyjna', 'placement' => 'left'])
         ->addText('info-section_title', ['label' => 'Nagłówek', 'new_lines'=>'br'])
         ->addText('info-section_subtitle', ['label' => 'Nagłówek', 'new_lines'=>'br'])

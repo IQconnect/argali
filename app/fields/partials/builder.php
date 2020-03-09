@@ -26,5 +26,6 @@ $builder
             ->addLayout(get_field_partial('components.flat-table'))
             ->addLayout(get_field_partial('components.columns'))
             ->addLayout(get_field_partial('components.diary'))
+            ->addLayout(get_field_partial('components.invests'))
     ;
 return $builder;
